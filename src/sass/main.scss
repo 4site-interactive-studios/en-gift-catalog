@@ -1,73 +1,426 @@
-@import url("https://use.typekit.net/bqp8wjl.css");
+// @import url("https://use.typekit.net/bqp8wjl.css");
 @import "reset";
-@import "breakpoint-sass";
-@import "breakpoint-slicer";
+@import "input-range";
+// @import "breakpoint-sass";
+// @import "breakpoint-slicer";
 
-$slicer-breakpoints: 0 400px 900px 1200px 1440px;
-body {
-  font-family: "myriad-pro", sans-serif;
+$color-handle: #1485E1;
+$color-track: #8CCDD2;
+$color-track-connect: #2F4C66;
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-#MacacoRosa {
+.en__component {
+  position: relative;
+}
+
+.en__component--row--3 {
   display: flex;
-  align-items: stretch;
-  min-height: 100vh;
-  // Layout container
-  > div {
-    &:first-child {
-      max-width: 600px;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 24px;
+
+  .en__component--column {
+    position: static;
+    flex: 1 0 auto;
+    box-sizing: border-box;
+    // width: 340px;
+  
+    @media screen and (min-width: 650px) {
       flex: 0 1 auto;
-    }
-    &:last-child {
-      flex: auto;
-      background-image: url("../img/background.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      &::before {
-        content: "";
-        width: 13px;
-        height: 100%;
-        position: absolute;
-        background-image: url("../img/lines.svg");
-        background-repeat: repeat-y;
-      }
+      margin-bottom: 15px;
+      width: 33.33% !important;
     }
   }
-  // Content Styles
-  .container {
-    margin: 30px 65px;
-  }
-  .logo {
-    display: block;
-    margin-bottom: 45px;
-    max-width: 300px;
-  }
+
+}
+
+.en__component--wrap {
+  height: 100%;
+  background-color: #EFF4F6;
+}
+
+.en__component--content {
+  padding: 30px 20px;
+  color: #144560;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+
   h1 {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.15px;
-    color: #333;
-    margin-bottom: 12px;
-    @include from(3) {
-      font-size: 38px;
-    }
-  }
-  p {
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 1.29;
-    color: peru;
-    @include from(3) {
-      font-size: 24px;
-    }
-  }
-  footer {
-    max-width: 60%;
-    margin: 20px auto;
-    border: 4px double hotpink;
-    padding: 40px;
+    font-size: 24px;
   }
 }
+
+.en__component--urgent {
+  position: absolute;
+  margin: 5px 0 0 5px;
+  background: #D80019;
+  color: #FFFFFF;
+  padding: 13px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.en__component--slider-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 12px;
+}
+
+.en__component--slider {
+  width: 100%;
+  margin: 5px 30px;
+
+  input {
+    width: 100%;
+  }
+
+  .bubble {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000000;
+    color: white;
+    padding: 4px 12px;
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #000000;
+    bottom: -1px;
+    left: 50%;
+  }
+}
+
+.tooltip-value {
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.tooltip-value--zero {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+ .noUi-target,
+ .noUi-target * {
+   -webkit-touch-callout: none;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   -webkit-user-select: none;
+   -ms-touch-action: none;
+   touch-action: none;
+   -ms-user-select: none;
+   -moz-user-select: none;
+   user-select: none;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+ }
+ .noUi-target {
+   position: relative;
+ }
+ .noUi-base,
+ .noUi-connects {
+   width: 100%;
+   height: 100%;
+   position: relative;
+ }
+ /* Wrapper for all connect elements.
+  */
+ .noUi-connects {
+   overflow: hidden;
+ }
+ .noUi-connect,
+ .noUi-origin {
+   will-change: transform;
+   position: absolute;
+   top: 0;
+   right: 0;
+   -ms-transform-origin: 0 0;
+   -webkit-transform-origin: 0 0;
+   -webkit-transform-style: preserve-3d;
+   transform-origin: 0 0;
+   transform-style: flat;
+ }
+ .noUi-connect {
+   height: 100%;
+   width: 100%;
+ }
+ .noUi-origin {
+   height: 10%;
+   width: 10%;
+ }
+ /* Offset direction
+  */
+ .noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+   left: 0;
+   right: auto;
+ }
+ /* Give origins 0 height/width so they don't interfere with clicking the
+  * connect elements.
+  */
+ .noUi-vertical .noUi-origin {
+   width: 0;
+ }
+ .noUi-horizontal .noUi-origin {
+   height: 0;
+ }
+ .noUi-handle {
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+   position: absolute;
+ }
+ .noUi-touch-area {
+   height: 100%;
+   width: 100%;
+   background-image: url("data:image/svg+xml;charset=UTF-8, <svg width='23' height='14' viewBox='0 0 23 14' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M0 7L8.5 0V3L3.96154 7L8.5 11L8.5 14L0 7ZM22.5 7L14 14V11L18.5385 7L14 3L14 0L22.5 7Z' fill='white'/></svg>");
+   background-repeat: no-repeat;
+   background-position: center center;
+ }
+ .noUi-state-tap .noUi-connect,
+ .noUi-state-tap .noUi-origin {
+   -webkit-transition: transform 0.3s;
+   transition: transform 0.3s;
+ }
+ .noUi-state-drag * {
+   cursor: inherit !important;
+ }
+ /* Slider size and handle placement;
+  */
+ .noUi-horizontal {
+   height: 2px;
+ }
+ .noUi-horizontal .noUi-handle {
+   width: 44px;
+   height: 44px;
+   right: -22px;
+   top: -22px;
+ }
+ .noUi-vertical {
+   width: 18px;
+ }
+ .noUi-vertical .noUi-handle {
+   width: 44px;
+   height: 44px;
+   right: -16px;
+   top: -22px;
+ }
+ .noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+   left: -17px;
+   right: auto;
+ }
+ /* Styling;
+  * Giving the connect element a border radius causes issues with using transform: scale
+  */
+ .noUi-target {
+   background: #FAFAFA;
+  //  border-radius: 4px;
+  //  border: 1px solid #D3D3D3;
+  //  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+ }
+ .noUi-connects {
+   background: $color-track;
+   border-radius: 3px;
+ }
+ .noUi-connect {
+   background: $color-track-connect;
+ }
+ /* Handles and cursors;
+  */
+ .noUi-draggable {
+   cursor: ew-resize;
+ }
+ .noUi-vertical .noUi-draggable {
+   cursor: ns-resize;
+ }
+ .noUi-handle {
+   border-radius: 50%;
+   background: $color-handle;
+   cursor: default;
+ }
+
+ /* Disabled state;
+  */
+ [disabled] .noUi-connect {
+   background: #B8B8B8;
+ }
+ [disabled].noUi-target,
+ [disabled].noUi-handle,
+ [disabled] .noUi-handle {
+   cursor: not-allowed;
+ }
+ /* Base;
+  *
+  */
+ .noUi-pips,
+ .noUi-pips * {
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+ }
+ .noUi-pips {
+   position: absolute;
+   color: #999;
+ }
+ /* Values;
+  *
+  */
+ .noUi-value {
+   position: absolute;
+   white-space: nowrap;
+   text-align: center;
+   display: none;
+ }
+ .noUi-value-sub {
+   color: #ccc;
+   font-size: 10px;
+ }
+ /* Markings;
+  *
+  */
+ .noUi-marker {
+   position: absolute;
+   background: #CCC;
+ }
+ .noUi-marker-sub {
+   background: #AAA;
+ }
+ .noUi-marker-large {
+   background: #AAA;
+ }
+ /* Horizontal layout;
+  *
+  */
+ .noUi-pips-horizontal {
+   height: 8px;
+   left: 0;
+   width: 100%;
+ }
+ .noUi-value-horizontal {
+   -webkit-transform: translate(-50%, 50%);
+   transform: translate(-50%, 50%);
+ }
+ .noUi-rtl .noUi-value-horizontal {
+   -webkit-transform: translate(50%, 50%);
+   transform: translate(50%, 50%);
+ }
+ .noUi-marker-horizontal.noUi-marker {
+   margin-left: -1px;
+   width: 6px;
+   height: 6px;
+   border-radius: 50%;
+   top: -4px;
+   background: $color-track-connect;
+ }
+ .noUi-marker-horizontal.noUi-marker-sub {
+   height: 10px;
+ }
+ .noUi-marker-horizontal.noUi-marker-large {
+   top: -5px;
+   height: 8px;
+   width: 8px;
+   border-radius: 50%;
+ }
+ /* Vertical layout;
+  *
+  */
+ .noUi-pips-vertical {
+   padding: 0 10px;
+   height: 100%;
+   top: 0;
+   left: 100%;
+ }
+ .noUi-value-vertical {
+   -webkit-transform: translate(0, -50%);
+   transform: translate(0, -50%);
+   padding-left: 25px;
+ }
+ .noUi-rtl .noUi-value-vertical {
+   -webkit-transform: translate(0, 50%);
+   transform: translate(0, 50%);
+ }
+ .noUi-marker-vertical.noUi-marker {
+   width: 5px;
+   height: 2px;
+   margin-top: -1px;
+ }
+ .noUi-marker-vertical.noUi-marker-sub {
+   width: 10px;
+ }
+ .noUi-marker-vertical.noUi-marker-large {
+   width: 15px;
+ }
+ .noUi-tooltip {
+   display: block;
+   position: absolute;
+   border-radius: 3px;
+   background: #000000;
+   color: #FFFFFF;
+   padding: 9px 18px;
+   text-align: center;
+   white-space: normal; //nowrap;
+   font-size: 22px;
+   text-transform: uppercase;
+   width: 100%;
+   height: auto;
+   min-width: 125px;
+   max-width: 125px;
+
+   &::after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 4px;
+    margin-left: -4px;
+   }
+ }
+ .noUi-horizontal .noUi-tooltip {
+   -webkit-transform: translate(-50%, 0);
+   transform: translate(-50%, 0);
+   left: 50%;
+   bottom: 120%;
+ }
+ .noUi-vertical .noUi-tooltip {
+   -webkit-transform: translate(0, -50%);
+   transform: translate(0, -50%);
+   top: 50%;
+   right: 120%;
+ }
+ .noUi-horizontal .noUi-origin > .noUi-tooltip {
+   -webkit-transform: translate(50%, 0);
+   transform: translate(50%, 0);
+   left: auto;
+   bottom: 10px;
+ }
+ .noUi-vertical .noUi-origin > .noUi-tooltip {
+   -webkit-transform: translate(0, -18px);
+   transform: translate(0, -18px);
+   top: auto;
+   right: 28px;
+ }
+ 

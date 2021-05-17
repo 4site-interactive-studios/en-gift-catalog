@@ -5,6 +5,9 @@ module.exports = {
   entry: {
     main: "./src/index.js"
   },
+  optimization: {
+    minimize: false
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Código Falado Rules",
