@@ -16,7 +16,7 @@ module.exports = merge(common, {
     minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[name].css" }),
+    // new MiniCssExtractPlugin({ filename: "[name].css" }),
     new CleanWebpackPlugin()
   ],
   module: {
@@ -24,7 +24,7 @@ module.exports = merge(common, {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, // 4. Salva o css em arquivos
+          "style-loader", // MiniCssExtractPlugin.loader, // 4. Salva o css em arquivos
           "css-loader", // 3. De css para vanilla js
           {
             loader: "postcss-loader", // 2. Adiciona Autoprefixer no CSS

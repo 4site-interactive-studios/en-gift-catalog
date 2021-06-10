@@ -6,7 +6,7 @@ module.exports = {
     main: "./src/index.js"
   },
   optimization: {
-    minimize: false
+    minimize: true
   },
   plugins: [
     new HtmlWebpackPlugin({
