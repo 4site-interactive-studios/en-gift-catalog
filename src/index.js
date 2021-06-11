@@ -6,7 +6,7 @@ import { options, donations } from './config.js';
 const inputDonation = document.querySelector("*[name='transaction.donationAmt.other']");
 
 const values = [];
-const radioButtonsContainer = document.querySelector(".en__field__element--radio");
+const radioButtonsContainer = document.querySelector(".en__field--donationAmt.en__field--withOther .en__field__element--radio");
 const radioButtons = radioButtonsContainer.children;
 const secondLastRadio = radioButtons[radioButtons.length - 2];
 const inputBtn = secondLastRadio.firstElementChild;
@@ -78,6 +78,7 @@ if (inputDonation) {
     moveBasicFields();
     lastElement();
     wrapElements();
+    showBody();
   });
 
 }
@@ -277,4 +278,8 @@ function wrapElements() {
   const ccWrap = document.querySelector('.en__field--ccwrap');
   ccWrap.insertAdjacentElement('beforeend', ccvv);
   ccWrap.insertAdjacentElement('beforeend', ccexpire);
+}
+
+function showBody(){
+  document.body.className += ' showBody';
 }
