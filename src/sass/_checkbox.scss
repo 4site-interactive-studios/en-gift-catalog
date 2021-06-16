@@ -2,7 +2,7 @@
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding: 0 0 0 35px !important;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 18px;
@@ -52,12 +52,12 @@
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+input:checked ~ label .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -67,4 +67,9 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+label {
+  margin: 0 !important;
+  width: 100% !important;
 }
