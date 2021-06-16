@@ -78,23 +78,6 @@ window.tipJar = (function() {
             $('input[name="transaction.donationAmt.other"]').blur(function() {
                 handleGiftstringInteraction();
             });
-
-            // $('input[name="transaction.donationAmt.other"]').on("input", function() {
-            //   console.log("CHANGE");
-            //     handleGiftstringInteraction();
-            // });
-
-            // const donationInput = document.querySelector('input[name="transaction.donationAmt.other"]');
-            // console.log("DONATION INPUT: " + donationInput);
-            // // donationInput.addEventListener("input", handleGiftstringInteraction);
-            // // donationInput.dispatchEvent(new Event('change'));
-
-            // const event = new Event('input');
-            // // Listen for the event.
-            // donationInput.addEventListener("input", handleGiftstringInteraction);
-            // // Dispatch the event.
-            // donationInput.dispatchEvent(event);
-
             handleGiftstringInteraction();
         }, 1000);
         if (vars.opts.useEngagingNetworksHooks == false && vars.opts.attachToSubmitClick == true) {
