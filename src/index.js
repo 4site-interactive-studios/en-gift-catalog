@@ -341,15 +341,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function moveError() {
     const errorHeader = document.querySelector(".en__errorHeader");
     const errorFields = document.querySelectorAll(".en__error");
-    const errorParent = errorHeader.parentNode;
-    errorParent.appendChild(errorHeader);
-    errorFields.forEach(error => {
-      errorParent.appendChild(error);
-    });
-    setTimeout(function() { 
-      errorHeader.scrollIntoView();
-    }, 1000);
-    
+    if(errorHeader && errorHeader.parentNode){
+      const errorParent = errorHeader.parentNode;
+      errorParent.appendChild(errorHeader);
+      errorFields.forEach(error => {
+        errorParent.appendChild(error);
+      });
+      setTimeout(function() { 
+        errorHeader.scrollIntoView();
+      }, 1000);
+    }
   }
 
 });

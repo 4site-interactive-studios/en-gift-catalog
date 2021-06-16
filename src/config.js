@@ -31,7 +31,7 @@ const donations = [
     donationAmount: '5', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $5'
   },
   { id: 2,
     quantity: 0,
@@ -39,7 +39,7 @@ const donations = [
     donationAmount: '7', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $7'
   },
   { id: 3,
     quantity: 0,
@@ -47,7 +47,7 @@ const donations = [
     donationAmount: '10', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $10'
   },
   { id: 4,
     quantity: 0,
@@ -55,7 +55,7 @@ const donations = [
     donationAmount: '30', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $30'
   },
   { id: 5,
     quantity: 0,
@@ -63,7 +63,7 @@ const donations = [
     donationAmount: '70', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $70'
   },
   { id: 6,
     quantity: 0,
@@ -71,7 +71,7 @@ const donations = [
     donationAmount: '265', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $265'
   },
   { id: 7,
     quantity: 0,
@@ -79,7 +79,7 @@ const donations = [
     donationAmount: '567', 
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
-    content: 'Lorem ipsum $2'
+    content: 'Lorem ipsum $567'
   },
 ];
 

@@ -837,8 +837,18 @@ select {
     width: 115px;
     margin-right: 12px;
 
+    .en__field__element--text{
+      position: relative;
+    }
+
     input {
-      width: 100%;
+      width: 100% !important;
+    }
+
+    .ccvv__link{
+      position: absolute;
+      top: -28px;
+      right: 0;
     }
   }
 
@@ -869,4 +879,14 @@ select {
 .en__error {
   padding-left: 16px;
   margin: 0 10px 0 10px !important;
+}
+
+/* Styles the "Email Suggestion" https://d.pr/i/sG8zWL */
+.en__field--emailAddress{
+  width: 100%;
+  @media (min-width: 640px) {
+    display: inline-flex;
+    flex-direction: column;
+    flex-basis: 0%;
+  }
 }
