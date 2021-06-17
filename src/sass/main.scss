@@ -57,6 +57,13 @@ p {
   }
 }
 
+.en__field__input--select {
+  min-width: 0;
+  @media (min-width: 641px) {
+    width: 258px;
+  }
+}
+
 // .en__captcha, .en__field {
 //   padding-bottom: 0;
 // }
@@ -550,7 +557,7 @@ select {
 
   .en__component--content h1 {
     font-size: 34px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     font-family: Raleway, sans-serif;
     font-weight: 800;
     line-height: 32px;
@@ -722,85 +729,138 @@ select {
 // }
 
 // .en__component--column--1, .en__component--column--2 {
-//   display: flex;
-//   flex-direction: column;
+//   // display: flex;
+//   // flex-direction: column;
 //   // width: 50%;
+
+//   // .en__field {
+//   //   display: flex;
+//   //   flex-direction: column;
+//   // }
 // }
 
-// .en_component--input-fields {
-
-//   .en__component--column--1 {
-//     @media (min-width: 641px) {
-//       margin-left: 10px;
-//     }
+.en__component--input-fields {
+  padding: 10px;
+  .en__component--column--1 {
+    display: flex;
+    flex: 1 1 auto;
     
-//     flex-basis: 100%;
-//     flex: 2;
-//     // flex: 0 1 auto;
-//     // width: auto;
-//     @media (min-width:966px) {
-//       // flex: 1 0 55%;
-//       // width: 50%;
-//     }
-  
-//     .en__donation--billing--info {
-//       @media (min-width: 641px) {
-//         border-right: 1px solid #d7dadd;
-//       }
-      
-//     }
-//   }
+    
+    @media (min-width: 641px) {
+      align-items: flex-start;
+      align-content: flex-start;
+      max-width: 60%;
+    }
+  }
+  .en__component--column--2 {
+    display: flex;
+    flex: 1 1 20%;
+    flex-direction: column;
+  }
+  .en__field {
+    display: flex;
+    flex-direction: column;
+  }
+  .en__field--emailAddress {
+    width: 100%;
+    @media (min-width: 641px) {
+      max-width: 258px;
+    }
+    @media (min-width: 921px) {
+      max-width: 526px;
+    }
+    
+    input {
+      width: 100%;
+    }
+  }
+}
 
-//   .en__column--cc {
-//     @media (min-width: 641px) {
-//       margin-left: 10px;
-//     }
-//     flex-basis: 100%;
-//     flex: 1;
-//   }
+.email--signup {
+  .en__component--formblock {
+    display: flex;
+
+    .en__field {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.en__component--input-fields {
+
+  .en__component--column--1 {
+    @media (min-width: 641px) {
+      margin-left: 10px;
+    }
+    
+    flex-basis: 100%;
+    flex: 2;
+    // flex: 0 1 auto;
+    // width: auto;
+    @media (min-width:966px) {
+      // flex: 1 0 55%;
+      // width: 50%;
+    }
+  }
+
+  .en__donation--billing--info {
+    @media (min-width: 641px) {
+      border-right: 1px solid #d7dadd;
+    }
+  }
+
+  .en__column--cc {
+    @media (min-width: 641px) {
+      margin-left: 10px;
+    }
+    flex-basis: 100%;
+    flex: 1;
+  }
 
 
-// }
+}
 
-// .en__donation--billing--info {
-//   @media (min-width: 641px) {
-//     display: flex;
-//     flex-wrap: wrap;
-//   }
+.en__donation--billing--info {
+  @media (max-width: 641px) {
+    flex-direction: column;
+  }
+  display: flex;
+  flex-wrap: wrap;
 
-//   .en__field {
-//     @media (min-width: 641px) {
-//       margin: 0 12px 12px 0;
-//     }
-//   }
-// }
+  .en__field {
+    @media (min-width: 641px) {
+      margin: 0 12px 12px 0;
+    }
+  }
+}
 
-// .en__column--cc {
-//   @media (min-width: 641px) {
-//     padding: 0 0 0 30px;
-//   }
+.en__column--cc {
+  @media (min-width: 641px) {
+    padding: 0 0 0 30px;
+  }
 
-//   @media (min-width: 680px) {
-//     padding: 0 0 0 50px;
-//   }
+  @media (min-width: 680px) {
+    padding: 0 0 0 50px;
+  }
 
-//   select#en__field_transaction_paymenttype {
-//     width: 100%;
-//     max-width: none;
-//     min-width: 0;
-//   }
+  select#en__field_transaction_paymenttype {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
 
-//   input#en__field_transaction_ccnumber {
-//     width: 100%;
-//     max-width: none;
-//     min-width: 0;
-//   }
+  input#en__field_transaction_ccnumber {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
 
-//   .en__field {
-//     margin-bottom: 12px;
-//   }
+  .en__field {
+    margin-bottom: 12px;
+  }
 
-// }
+}
 
 .cc__icons {
   margin-bottom: 16px;
@@ -814,66 +874,66 @@ select {
   } 
 }
 
-// .en__field--ccexpire {
-//   .en__field__element--splitselect {
-//     display: flex;
-//     .en__field__item {
-//       width: 50%;
-//       select {
-//         width: 100%;
-//       }
-//     }
-//   }
-// }
+.en__field--ccexpire {
+  .en__field__element--splitselect {
+    display: flex;
+    .en__field__item {
+      width: 50%;
+      select {
+        width: 100%;
+      }
+    }
+  }
+}
 
-// .en__field--ccwrap {
-//   display: flex;
-//   flex-wrap: wrap;
+.en__field--ccwrap {
+  display: flex;
+  flex-wrap: wrap;
 
-//   input {
-//     margin-right: 12px;
-//   }
+  input {
+    margin-right: 12px;
+  }
 
-//   select {
-//     max-width: none;
-//     min-width: 0;
-//   }
+  select {
+    max-width: none;
+    min-width: 0;
+  }
 
-//   .en__field__element--splitselect {
+  .en__field__element--splitselect {
 
-//     .en__field__item:not(:last-child) {
-//         margin: 0 12px 12px 0;
-//     }
-//   }
+    .en__field__item:not(:last-child) {
+        margin: 0 12px 12px 0;
+    }
+  }
 
-//   input[type="number"], input[type="text"], input[type="email"] {
-//     min-width: 0;
-//   }
+  input[type="number"], input[type="text"], input[type="email"] {
+    min-width: 0;
+  }
 
-//   .en__field--ccvv {
-//     width: 115px;
-//     margin-right: 12px;
+  .en__field--ccvv {
+    width: 115px;
+    margin-right: 12px;
 
-//     .en__field__element--text{
-//       position: relative;
-//     }
+    .en__field__element--text{
+      position: relative;
+    }
 
-//     input {
-//       width: 100% !important;
-//     }
+    input {
+      width: 100% !important;
+    }
 
-//     .ccvv__link{
-//       position: absolute;
-//       top: -28px;
-//       right: 0;
-//     }
-//   }
+    .ccvv__link{
+      position: absolute;
+      top: -28px;
+      right: 0;
+    }
+  }
 
-//   .en__field__item {
-//     padding: 0;
-//   }
+  .en__field__item {
+    padding: 0;
+  }
   
-// }
+}
 
 select {
   -webkit-appearance: none;

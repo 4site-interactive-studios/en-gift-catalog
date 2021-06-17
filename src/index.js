@@ -82,9 +82,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     window.addEventListener('load', function () {
       displayDonations();
-      // moveBasicFields();
-      // lastElement();
-      // wrapElements();
+      lastElement();
+      moveBasicFields();
+      wrapElements();
       showBody();
       carePackageBtn();
       moveError();
@@ -274,33 +274,74 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   }
 
-  // function moveBasicFields() {
-  //   const firstName = document.querySelector(".en__field--firstName");
-  //   const lastName = document.querySelector(".en__field--lastName");
-  //   const emailAddress = document.querySelector(".en__field--emailAddress");
-  //   const country = document.querySelector(".en__field--country");
-  //   country.insertAdjacentElement('beforebegin', firstName);
-  //   country.insertAdjacentElement('beforebegin', lastName);
-  //   country.insertAdjacentElement('beforebegin', emailAddress);
-  //   document.querySelector(".en__donation--billing--info").remove();
-  // }
+  function moveBasicFields() {
+    const firstName = document.querySelector(".en__field--firstName");
+    const lastName = document.querySelector(".en__field--lastName");
+    const emailAddress = document.querySelector(".en__field--emailAddress");
+    const country = document.querySelector(".en__field--country");
+    country.insertAdjacentElement('beforebegin', firstName);
+    country.insertAdjacentElement('beforebegin', lastName);
+    country.insertAdjacentElement('beforebegin', emailAddress);
+    document.querySelector(".en__donation--billing--info").remove();
 
-  // function lastElement() {
-  //   const row2 = document.querySelectorAll(".en__component--row--1");
-  //   const lastColumn = row2[row2.length - 1];
-  //   const lastColumnChild = lastColumn.lastElementChild;
-  //   lastColumnChild.classList.add('en__column--cc');
-  //   lastColumn.classList.add('en_component--input-fields');
-  // }
+    
 
-  // function wrapElements() {
-  //   const ccvv = document.querySelector(".en__field--ccvv");
-  //   const ccexpire = document.querySelector(".en__field--ccexpire");
-  //   ccvv.insertAdjacentHTML('beforebegin', `<div class="en__field--ccwrap"></div>`);
-  //   const ccWrap = document.querySelector('.en__field--ccwrap');
-  //   ccWrap.insertAdjacentElement('beforeend', ccvv);
-  //   ccWrap.insertAdjacentElement('beforeend', ccexpire);
-  // }
+    const billingInfo = document.querySelector(".en__donation--billing--info");
+    billingInfo.classList.add('en__component--column--1');
+
+    const newDiv2 = document.createElement('div');
+    const postCode = document.querySelector(".en__field--postcode");
+    newDiv2.classList.add('email--signup');
+    postCode.after(newDiv2);
+    
+    billingInfo.insertAdjacentElement('beforeend', billingInfo.nextElementSibling);
+    billingInfo.insertAdjacentElement('beforeend', billingInfo.nextElementSibling);
+    billingInfo.insertAdjacentElement('beforeend', billingInfo.nextElementSibling);
+
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('en__component', 'en__component--formblock', 'en__column--cc', 'en__component--column--2');
+    billingInfo.insertAdjacentElement('afterend', newDiv);
+
+    const columnCC = document.querySelector(".en__column--cc");
+    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
+
+    const inputFields = document.querySelector(".en__component--input-fields");
+    inputFields.insertAdjacentElement('afterbegin', columnCC);
+    inputFields.insertAdjacentElement('afterbegin', billingInfo);
+
+    
+
+    newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
+    newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
+    newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
+
+  }
+
+  function lastElement() {
+    const row2 = document.querySelectorAll(".en__component--row--1");
+    const lastColumn = row2[row2.length - 1];
+    const lastColumnChild = lastColumn.lastElementChild;
+    // lastColumnChild.classList.add('en__column--cc');
+    // lastColumn.classList.add('en_component--input-fields');
+
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('en__component', 'en__component--row', 'en__component--row--2', 'en__component--input-fields');
+    lastColumn.insertAdjacentElement('beforebegin', newDiv);
+    
+  }
+
+  function wrapElements() {
+    const ccvv = document.querySelector(".en__field--ccvv");
+    const ccexpire = document.querySelector(".en__field--ccexpire");
+    ccvv.insertAdjacentHTML('beforebegin', `<div class="en__field--ccwrap"></div>`);
+    const ccWrap = document.querySelector('.en__field--ccwrap');
+    ccWrap.insertAdjacentElement('beforeend', ccvv);
+    ccWrap.insertAdjacentElement('beforeend', ccexpire);
+  }
 
   function showBody(){
     document.body.className += ' showBody';
