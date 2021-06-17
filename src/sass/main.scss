@@ -7,6 +7,11 @@ body{
   max-width: 100% !important;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: inherit !important;
+  text-transform: none !important;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -27,8 +32,8 @@ p {
 }
 
 .en__component--column {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   margin-top: 0;
 }
 
@@ -135,6 +140,7 @@ select {
   box-sizing: border-box;
   max-width: 65rem;
   margin: 0 auto;
+  padding: 0 !important;
 
   .en__component--column {
     position: static;
