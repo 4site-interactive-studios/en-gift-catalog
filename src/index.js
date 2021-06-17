@@ -75,23 +75,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     </svg>
   </div>`);
 
-
-  // .en__component--footer
-
-  const body = document.querySelector("body");
-  body.insertAdjacentHTML('beforeend', `
-  <div class="en__component--footer">
-    <div class="en__component--footer-wrap">
-      <div class="en__component--footer-column footer-logo" style="width: 150px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="29" fill="none" viewBox="0 0 75 29"><path fill="#999" d="M14.387.039H7.265L0 27.139h6.018L8.935 16.6l-.322 1.388c4.06.356 12.96.427 14.249-9.473C24.145-1.065 14.387.039 14.387.039zm.677 11.324c-2.03 1.924-4.95 1.247-4.95 1.247l.819-3.027 1.103-4.025c.428-.036 3.348-.356 4.167.322.89.712.25 4.166-1.14 5.484zM41.026 2.104c-.475-.758-1.19-1.335-2.03-1.638-5.164-1.676-9.402 2.279-12.358 6.09-3.002 3.995-4.694 8.822-4.843 13.817.142 2.956.855 6.268 3.882 7.443 4.95 1.246 8.583-2.956 11.252-6.446.285-.498.783-.925.783-1.495-.213-.108-.392-.285-.644-.285-.552.843-1.171 1.641-1.851 2.386-1.71 1.673-3.882 2.991-6.375 2.421-2.742-1.246-2.849-4.452-2.6-7.229.124-1.067.363-2.118.713-3.134l1.852-.534c4.095-1.353 8.935-1.638 11.68-5.77.926-1.567 1.674-3.917.535-5.627l.004.001zm-9.117 9.117c-5.59 1.816-4.202 1.068-4.202 1.068S31.98-.46 36.324 1.035c4.416 1.496 1.208 8.372-4.416 10.185zM44.195.146L62.073.039l-1.567 5.84-5.84.107-5.948 21.154h-6.553l5.733-21.19h-5.377L44.195.147zM67.271.11L54.237 27.104h6.73l2.066-4.451h6.055v4.416L75 27.034V.039l-7.728.07h-.001zm-1.816 17.2l3.561-7.728.036-.107v7.835h-3.597z"/></svg>
-      </div>
-      <div class="en__component--footer-column">
-      ${options.footerContent}
-      </div>
-    </div>
-  </div>
-  `);
-
   if (inputDonation) {
     inputDonation.value = 0;
     const donationButtons = document.querySelector(".en__field--donationAmt");
@@ -99,9 +82,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     window.addEventListener('load', function () {
       displayDonations();
-      moveBasicFields();
-      lastElement();
-      wrapElements();
+      // moveBasicFields();
+      // lastElement();
+      // wrapElements();
       showBody();
       carePackageBtn();
       moveError();
@@ -164,7 +147,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
     
 
-    const shoppingCart = document.querySelector(".en__component--row--2");
+    const shoppingCart = document.querySelector(".en__component--row--1");
     shoppingCart.insertAdjacentHTML('beforebegin', `
     <div class="en__component--hero-wrapper">
     <div class="en__component en__component--row en__component--row--1 en__component--hero" style="background: #B64815 url('${options.heroImage}');background-repeat: no-repeat; background-position: right; background-size: contain;">
@@ -291,34 +274,33 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   }
 
-  function moveBasicFields() {
-    const firstName = document.querySelector(".en__field--firstName");
-    const lastName = document.querySelector(".en__field--lastName");
-    const emailAddress = document.querySelector(".en__field--emailAddress");
-    const country = document.querySelector(".en__field--country");
-    country.insertAdjacentElement('beforebegin', firstName);
-    country.insertAdjacentElement('beforebegin', lastName);
-    country.insertAdjacentElement('beforebegin', emailAddress);
-    document.querySelector(".en__donation--billing--info").remove();
-  }
+  // function moveBasicFields() {
+  //   const firstName = document.querySelector(".en__field--firstName");
+  //   const lastName = document.querySelector(".en__field--lastName");
+  //   const emailAddress = document.querySelector(".en__field--emailAddress");
+  //   const country = document.querySelector(".en__field--country");
+  //   country.insertAdjacentElement('beforebegin', firstName);
+  //   country.insertAdjacentElement('beforebegin', lastName);
+  //   country.insertAdjacentElement('beforebegin', emailAddress);
+  //   document.querySelector(".en__donation--billing--info").remove();
+  // }
 
-  function lastElement() {
-    const row2 = document.querySelectorAll(".en__component--row--2");
-    const lastColumn = row2[row2.length - 1];
-    const lastColumnChild = lastColumn.lastElementChild;
-    lastColumnChild.classList.add('en__column--cc');
-    lastColumn.classList.add('en_component--input-fields');
-  }
+  // function lastElement() {
+  //   const row2 = document.querySelectorAll(".en__component--row--1");
+  //   const lastColumn = row2[row2.length - 1];
+  //   const lastColumnChild = lastColumn.lastElementChild;
+  //   lastColumnChild.classList.add('en__column--cc');
+  //   lastColumn.classList.add('en_component--input-fields');
+  // }
 
-
-  function wrapElements() {
-    const ccvv = document.querySelector(".en__field--ccvv");
-    const ccexpire = document.querySelector(".en__field--ccexpire");
-    ccvv.insertAdjacentHTML('beforebegin', `<div class="en__field--ccwrap"></div>`);
-    const ccWrap = document.querySelector('.en__field--ccwrap');
-    ccWrap.insertAdjacentElement('beforeend', ccvv);
-    ccWrap.insertAdjacentElement('beforeend', ccexpire);
-  }
+  // function wrapElements() {
+  //   const ccvv = document.querySelector(".en__field--ccvv");
+  //   const ccexpire = document.querySelector(".en__field--ccexpire");
+  //   ccvv.insertAdjacentHTML('beforebegin', `<div class="en__field--ccwrap"></div>`);
+  //   const ccWrap = document.querySelector('.en__field--ccwrap');
+  //   ccWrap.insertAdjacentElement('beforeend', ccvv);
+  //   ccWrap.insertAdjacentElement('beforeend', ccexpire);
+  // }
 
   function showBody(){
     document.body.className += ' showBody';

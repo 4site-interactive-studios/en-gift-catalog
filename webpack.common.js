@@ -14,7 +14,7 @@ module.exports = {
       template: "./src/index.html",
       inject: true,
       minify: {
-        removeComments: true,
+        removeComments: false,
         collapseWhitespace: false
       }
     })
