@@ -364,7 +364,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function moveError() {
     const errorHeader = document.querySelector(".en__errorHeader");
     const errorFields = document.querySelectorAll(".en__error");
-    if(errorHeader && errorHeader.parentNode){
+    if (errorHeader && errorHeader.parentNode) {
       const errorParent = errorHeader.parentNode;
       errorParent.appendChild(errorHeader);
       errorFields.forEach(error => {
@@ -373,6 +373,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
       setTimeout(function() { 
         errorHeader.scrollIntoView();
       }, 1000);
+    } else {
+      window.localStorage.clear();
     }
   }
 

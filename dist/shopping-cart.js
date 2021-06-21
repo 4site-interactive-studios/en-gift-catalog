@@ -821,6 +821,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
       setTimeout(function () {
         errorHeader.scrollIntoView();
       }, 1000);
+    } else {
+      window.localStorage.clear();
     }
   }
 });
