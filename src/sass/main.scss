@@ -959,10 +959,18 @@ select {
 }
 
 /* These fields should not be visible */
-.en__field--bankRoutingNumber,
-.en__field--bankAccountNumber,
-.en__field--NOT_TAGGED_60,
-.en__field--bankAccountType,
-.en__field--NOT_TAGGED_99{
+body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--bankRoutingNumber,
+body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--bankAccountNumber,
+body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NOT_TAGGED_60,
+body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--bankAccountType,
+body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NOT_TAGGED_99{
   display: none;
+}
+
+.en__field__error {
+  order: 1;
+}
+
+.en__donation--billing--info .en__field--emailAddress .en__field__element::after{
+  width: 100%;
 }
