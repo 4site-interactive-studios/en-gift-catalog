@@ -110,9 +110,8 @@ label.en__field__label {
   font-size: 14px;
   font-family: "Proxima Nova", sans-serif;
   color: #344857;
-  // display: block;
-  margin-bottom: 6px;
 }
+
 select {
   height: 48px;
   border-radius: 4px;
@@ -122,6 +121,14 @@ select {
   //   min-width: 258px;
   //   max-width: 258px;
   // }
+}
+
+.en__field__helpText, .en__field__label {
+  padding: 6px 0;
+}
+
+.en__captcha, .en__field {
+  padding-bottom: 0 !important;
 }
 
 .en__component--row:not(.en__component--hero){
@@ -740,7 +747,7 @@ select {
 // }
 
 .en__component--input-fields {
-  padding: 10px;
+  padding: 10px 10px 50px 10px;
   .en__component--column--1 {
     display: flex;
     flex: 1 1 auto;
@@ -767,7 +774,7 @@ select {
       max-width: 258px;
     }
     @media (min-width: 921px) {
-      max-width: 526px;
+      max-width: 528px;
     }
     
     input {
