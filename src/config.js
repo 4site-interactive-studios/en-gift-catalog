@@ -56,31 +56,7 @@ const donations = [
     imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
     title: 'Help provide support and care',
     content: 'Lorem ipsum $30'
-  },
-  { id: 5,
-    quantity: 0,
-    urgent: false, 
-    donationAmount: '70', 
-    imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
-    title: 'Help provide support and care',
-    content: 'Lorem ipsum $70'
-  },
-  { id: 6,
-    quantity: 0,
-    urgent: false, 
-    donationAmount: '265', 
-    imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
-    title: 'Help provide support and care',
-    content: 'Lorem ipsum $265'
-  },
-  { id: 7,
-    quantity: 0,
-    urgent: false, 
-    donationAmount: '567', 
-    imageURL: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg', 
-    title: 'Help provide support and care',
-    content: 'Lorem ipsum $567'
-  },
+  }
 ];
 
 export { options, donations };
