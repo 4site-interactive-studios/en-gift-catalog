@@ -777,6 +777,7 @@ select {
 }
 
 .email--signup {
+  order: 10;
   .en__component--formblock {
     display: flex;
 
@@ -973,4 +974,40 @@ body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NO
 
 .en__donation--billing--info .en__field--emailAddress .en__field__element::after{
   width: 100%;
+}
+
+.en__field--firstName {
+  order: 1;
+}
+
+.en__field--lastName {
+  order: 2;
+}
+
+.en__field--address1 {
+  order: 3;
+}
+
+.en__field--address2 {
+  order: 4;
+}
+
+.en__field--country {
+  order: 5;
+}
+
+.en__field--postcode {
+  order: 6;
+}
+
+.en__field--city {
+  order: 7;
+}
+
+.en__field--region {
+  order: 8;
+}
+
+.en__field--emailAddress {
+  order: 9; 
 }
