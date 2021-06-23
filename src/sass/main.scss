@@ -74,6 +74,20 @@ p {
   font-family: "proxima-nova", sans-serif;
 }
 
+.en__component--complete-heading {
+  margin: 25px auto;
+  text-align: center;
+  padding: 0 25px;
+
+  h1 {
+    margin: 0;
+  }
+
+  .totalAmount {
+    display: inline-block;
+  }
+}
+
 .en__component--heading {
   color: #344857;
   // display: none !important;

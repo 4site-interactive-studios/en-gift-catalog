@@ -263,13 +263,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function updateInput(customAmount) {
-      const carePackageTotal = document.querySelector(".totalAmount");
+      const carePackagesTotal = document.querySelectorAll(".totalAmount");
 
       const result = values.reduce((acc, current) => {
         return acc + current.value * current.amount;
       }, 0);
 
-      carePackageTotal.innerHTML = (customAmount + result);
+      carePackagesTotal.forEach(total => {
+        total.innerHTML = (customAmount + result);
+      });
       inputDonation.value = (customAmount + result);
     }
 
@@ -313,6 +315,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const inputFields = document.querySelector(".en__component--input-fields");
     inputFields.insertAdjacentElement('afterbegin', columnCC);
     inputFields.insertAdjacentElement('afterbegin', billingInfo);
+    inputFields.insertAdjacentHTML('beforebegin', `
+    <div class="en__component en__component--row en__component--row--1 en__component--complete-heading">
+      <div class="en__component en__component en__component--column en__component--column--1">
+        <h1>Complete Your $<div class="totalAmount">0</div> (Monthly) Donation</h1>
+      </div>
+    </div>`);
 
     
 
