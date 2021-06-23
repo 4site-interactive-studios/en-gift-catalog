@@ -4,6 +4,12 @@ import scss from "./sass/main.scss";
 import { options, donations } from './config.js';
 
 
+let isIE = /*@cc_on!@*/false || !!document.documentMode;
+if (isIE) {
+  window.location.replace("https://support.peta.org/page/30610/donate/1");
+}
+
+
 window.enOnValidate = function() {
   let storedDonations = [];
   const currentDonations = document.querySelectorAll(".donationCard");

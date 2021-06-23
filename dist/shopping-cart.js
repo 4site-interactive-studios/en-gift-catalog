@@ -564,6 +564,13 @@ var donations = [{
  // import noUiSlider from 'nouislider';
 
 
+var isIE =
+/*@cc_on!@*/
+ false || !!document.documentMode;
+
+if (isIE) {
+  window.location.replace("https://support.peta.org/page/30610/donate/1");
+}
 
 window.enOnValidate = function () {
   var storedDonations = [];
