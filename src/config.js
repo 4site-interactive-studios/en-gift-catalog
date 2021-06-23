@@ -1,5 +1,6 @@
 const options = { 
-  title: "<strong>Select gift(s)</strong> (select as many as you would like):",
+  title: "<strong>Select gift(s)</strong> (as many as you would like):",
+  responsiveTitle: "<strong>Select gift(s)</strong>",
   customAmount: true,
   customAmountImage: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg",
   heroImage: "https://martin.4sitestudios.com/peta/hero.png",

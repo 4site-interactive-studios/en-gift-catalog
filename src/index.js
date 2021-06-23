@@ -188,7 +188,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     </div>
     </div>
     <div id="en__component--heading" class="en__component en__component--row en__component--row--3 en__component--heading">
-      <h1>${options.title}</h1>
+      <h1 class="desktop">${options.title}</h1>
+      <h1 class="responsive">${options.responsiveTitle}</h1>
     </div>
     <div class="en__component en__component--row en__component--row--3">
       ${donationsHTML}
