@@ -159,8 +159,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <div class="en__component--hero-content hero-content-responsive">
           <div class="en__component--hero-logo"></div>
           <div class="en__component--hero-hero-titles">
-            <h2>Help a Distressed 'Backyard Dog'</h2>
-            <h1>Survive the Summer</h1>
+            <h1>Help a Distressed 'Backyard Dog' Survive the Summer</h1>
           </div>
         </div>
 
@@ -169,7 +168,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <div class="en__component--hero-content">
           <p>The scorching sun and unrelenting heat of summer can be deadly for a dog kept chained outside without adequate shelter. For as little as $2, you can help provide support and care to a lonely dog, or you can give a sturdy doghouse and some relief to a dog struggling to survive the season’s worst weather, by sponsoring a doghouse.</p>
           <p class="small-bold">Send a care package below—a package of any size will be life-changing for a dog. Plus, our friends at v-dog will donate a 5-pound bag of healthy vegan dog food. Dogs need you!</p>
-          <button class="en__component--button-cta">Send your care package!</button>
         </div>
 
       </div>
@@ -177,11 +175,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
       <div class="en__component--hero-wrap">
         <div class="en__component--hero-logo"></div>
         <div class="en__component--hero-content">
-          <h2>Help a Distressed 'Backyard Dog'</h2>
-          <h1>Survive the Summer</h1>
+          <h1>Help a Distressed 'Backyard Dog' Survive the Summer</h1>
           <p>The scorching sun and unrelenting heat of summer can be deadly for a dog kept chained outside without adequate shelter. For as little as $2, you can help provide support and care to a lonely dog, or you can give a sturdy doghouse and some relief to a dog struggling to survive the season’s worst weather, by sponsoring a doghouse.</p>
           <p class="small-bold">Send a care package below—a package of any size will be life-changing for a dog. Plus, our friends at v-dog will donate a 5-pound bag of healthy vegan dog food. Dogs need you!</p>
-          <button class="en__component--button-cta">Send your care package!</button>
         </div>
       </div>
 
