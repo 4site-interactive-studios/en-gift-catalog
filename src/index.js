@@ -135,7 +135,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             <h1>Amount of<br>your choice</h1>
             <div class='en__component--customDonationAmount-wrap'>
               <div class='en__component--customDonationAmount'>
-                <input type="number" step="any" placeholder="Other Amount" value="${localStorage.getItem('customDonation') ? localStorage.getItem('customDonation') : 0 }" />
+                <input type="number" step="any" placeholder="Other Amount" min="0" value="${localStorage.getItem('customDonation') ? localStorage.getItem('customDonation') : 0 }" />
                 <div class="en__component--usd">USD</div>
               </div>
             </div>
