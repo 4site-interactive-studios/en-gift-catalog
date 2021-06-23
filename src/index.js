@@ -85,7 +85,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     inputDonation.value = 0;
     const donationButtons = document.querySelector(".en__field--donationAmt");
     donationButtons.style.display = "none";
-
     window.addEventListener('load', function () {
       displayDonations();
       lastElement();
@@ -94,6 +93,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       showBody();
       carePackageBtn();
       moveError();
+      document.querySelector('.en__field--donationAmt.en__field--radio .en__field__element .en__field__item:nth-last-child(2) input').checked = true; // Check the second to last Gift Amount field so that the other amount field is used for the gift amount
     });
 
     if (localStorage.getItem('repeatGift') === 'true') {
@@ -352,6 +352,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const ccWrap = document.querySelector('.en__field--ccwrap');
     ccWrap.insertAdjacentElement('beforeend', ccvv);
     ccWrap.insertAdjacentElement('beforeend', ccexpire);
+
+    // Placed here because it's dependent on other elements to have been moved/wrapped before it fires
+    const postCode2 = document.querySelector(".email--signup");
+    const ccWrap2 = document.querySelector(".en__field--ccwrap");
+    ccWrap2.after(postCode2);
   }
 
   function showBody(){
