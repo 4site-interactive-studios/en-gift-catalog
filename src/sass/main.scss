@@ -1,4 +1,5 @@
 @import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap');
 
 body{
   background-color: #ffffff !important;
@@ -70,7 +71,7 @@ p {
 
 .en__component {
   position: relative;
-  font-family: Proxima Nova, sans-serif;
+  font-family: "proxima-nova", sans-serif;
 }
 
 .en__component--heading {
@@ -84,7 +85,7 @@ p {
 
   h1 {
     font-size: 30px;
-    font-family: Raleway, sans-serif;
+    font-family: "Raleway", sans-serif;
 
     strong {
       font-weight: bold !important;
@@ -108,7 +109,7 @@ input[type="text"], input[type="number"], input[type="email"] {
 
 label.en__field__label {
   font-size: 14px;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   color: #344857;
 }
 
@@ -283,7 +284,7 @@ select {
     }
 
     h1 {
-      font-family: Raleway, sans-serif;
+      font-family: "Raleway", sans-serif;
       font-weight: 800;
       font-size: 57px;
       color: #FBE706;
@@ -291,13 +292,13 @@ select {
     }
 
     h2 {
-      font-family: Raleway, sans-serif;
+      font-family: "Raleway", sans-serif;
       font-weight: 500;
       font-size: 24px;
     }
 
     p {
-      font-family: "Proxima Nova", sans-serif;
+      font-family: "proxima-nova", sans-serif;
       line-height: 26px;
       font-size: 18px;
       margin: 6px 0;
@@ -325,7 +326,7 @@ select {
   margin-top: 8px;
 
   .amount {
-    font-family: Raleway, sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
     font-size: 32px;
     margin: 0 6px;
@@ -394,7 +395,7 @@ select {
     }
 
     .totalAmount {
-      font-family: Raleway, sans-serif;
+      font-family: "Raleway", sans-serif;
       font-weight: 800;
       font-size: 58px;
       display: flex;
@@ -425,7 +426,7 @@ select {
     }
 
     h1 {
-      font-family: Raleway, sans-serif;
+      font-family: "Raleway", sans-serif;
       font-weight: bold;
       font-size: 24px;
       margin-bottom: 12px;
@@ -565,7 +566,7 @@ select {
   .en__component--content h1 {
     font-size: 34px;
     color: #FFFFFF !important;
-    font-family: Raleway, sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 800;
     line-height: 32px;
     text-align: center;
@@ -589,18 +590,18 @@ select {
   box-sizing: border-box;
   text-align: center;
   font-size: 22px;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   z-index: 10;
   
   h1 {
-    font-family: Raleway, sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 12px;
   }
 
   .en__component--quantity {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "proxima-nova", sans-serif;
     font-size: 16px;
     margin-top: 6px;
   }
@@ -634,7 +635,7 @@ select {
   height: 72px;
   box-sizing: border-box;
   text-align: center;
-  font-family: Raleway, sans-serif;
+  font-family: "Raleway", sans-serif;
 
   &::before {
     position: relative;
@@ -714,7 +715,7 @@ select {
 //   background: rgba(255, 240, 202, 0.24);
 //   box-sizing: border-box;
 //   color: #999999;
-//   font-family: "Proxima Nova", sans-serif;
+//   font-family: "proxima-nova", sans-serif;
 //   font-size: 12px;
 
 //   .en__component--footer-wrap {
