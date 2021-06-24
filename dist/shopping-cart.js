@@ -104,11 +104,9 @@ options.singleton = false;
 
 var update = api(content, options);
 
-var exported = content.locals ? content.locals : {};
 
 
-
-module.exports = exported;
+module.exports = content.locals || {};
 
 /***/ }),
 /* 1 */
@@ -290,7 +288,7 @@ function applyToTag(style, options, obj) {
     style.removeAttribute('media');
   }
 
-  if (sourceMap && btoa) {
+  if (sourceMap && typeof btoa !== 'undefined') {
     css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
   } // For old IE
 
@@ -504,6 +502,7 @@ function toComment(sourceMap) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./src/sass/main.scss
@@ -625,7 +624,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
       showBody();
       carePackageBtn();
       moveError();
-      document.querySelector('.en__field--donationAmt .en__field__element .en__field__item:nth-last-child(2) input').checked = true; // Check the second to last Gift Amount field so that the other amount field is used for the gift amount
+      listenMonthlyCheckbox();
+      document.querySelector('.en__field--donationAmt.en__field--radio .en__field__element .en__field__item:nth-last-child(2) input').checked = true; // Check the second to last Gift Amount field so that the other amount field is used for the gift amount
     });
 
     if (localStorage.getItem('repeatGift') === 'true') {
@@ -756,7 +756,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
     var inputFields = document.querySelector(".en__component--input-fields");
     inputFields.insertAdjacentElement('afterbegin', columnCC);
     inputFields.insertAdjacentElement('afterbegin', billingInfo);
-    inputFields.insertAdjacentHTML('beforebegin', "\n    <div class=\"en__component en__component--row en__component--row--1 en__component--complete-heading\">\n      <div class=\"en__component en__component en__component--column en__component--column--1\">\n        <h1>Complete Your $<div class=\"totalAmount\">0</div> (Monthly) Donation</h1>\n      </div>\n    </div>");
+    inputFields.insertAdjacentHTML('beforebegin', "\n    <div class=\"en__component en__component--row en__component--row--1 en__component--complete-heading\">\n      <div class=\"en__component en__component en__component--column en__component--column--1\">\n        <h1>Complete Your $<div class=\"totalAmount\">0</div> <span class=\"monthly\" style=\"display: none\">Monthly</span> Donation</h1>\n      </div>\n    </div>");
     newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
     newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
     newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
@@ -818,6 +818,18 @@ window.addEventListener('DOMContentLoaded', function (event) {
     } else {
       window.localStorage.clear();
     }
+  }
+
+  function listenMonthlyCheckbox() {
+    var checkbox = document.querySelector('input[name="transaction.recurrpay"]');
+    var monthly = document.querySelector(".en__component--complete-heading .monthly");
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        monthly.style.display = "inline-block";
+      } else {
+        monthly.style.display = "none";
+      }
+    });
   }
 });
 

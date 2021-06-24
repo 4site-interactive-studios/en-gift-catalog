@@ -93,6 +93,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
       showBody();
       carePackageBtn();
       moveError();
+      listenMonthlyCheckbox();
+
       document.querySelector('.en__field--donationAmt.en__field--radio .en__field__element .en__field__item:nth-last-child(2) input').checked = true; // Check the second to last Gift Amount field so that the other amount field is used for the gift amount
     });
 
@@ -320,7 +322,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     inputFields.insertAdjacentHTML('beforebegin', `
     <div class="en__component en__component--row en__component--row--1 en__component--complete-heading">
       <div class="en__component en__component en__component--column en__component--column--1">
-        <h1>Complete Your $<div class="totalAmount">0</div> (Monthly) Donation</h1>
+        <h1>Complete Your $<div class="totalAmount">0</div> <span class="monthly" style="display: none">Monthly</span> Donation</h1>
       </div>
     </div>`);
 
@@ -392,6 +394,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     } else {
       window.localStorage.clear();
     }
+  }
+
+  function listenMonthlyCheckbox() {
+    const checkbox = document.querySelector('input[name="transaction.recurrpay"]');
+    const monthly = document.querySelector(".en__component--complete-heading .monthly");
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        monthly.style.display = "inline-block"
+      } else {
+        monthly.style.display = "none"
+      }
+    });
   }
 
 });
