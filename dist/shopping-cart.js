@@ -104,9 +104,11 @@ options.singleton = false;
 
 var update = api(content, options);
 
+var exported = content.locals ? content.locals : {};
 
 
-module.exports = content.locals || {};
+
+module.exports = exported;
 
 /***/ }),
 /* 1 */
@@ -288,7 +290,7 @@ function applyToTag(style, options, obj) {
     style.removeAttribute('media');
   }
 
-  if (sourceMap && typeof btoa !== 'undefined') {
+  if (sourceMap && btoa) {
     css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
   } // For old IE
 
@@ -502,7 +504,6 @@ function toComment(sourceMap) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./src/sass/main.scss
@@ -569,7 +570,7 @@ var isIE =
  false || !!document.documentMode;
 
 if (isIE) {
-  window.location.replace("https://support.peta.org/page/30610/donate/1");
+  window.location.replace("https://support.peta.org/page/30610/donate/1?en_txn7=don::SDHCarepackage-IE11-Redirect&supporter.appealCode=IXXXWBXXXXH");
 }
 
 window.enOnValidate = function () {

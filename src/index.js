@@ -6,7 +6,7 @@ import { options, donations } from './config.js';
 
 let isIE = /*@cc_on!@*/false || !!document.documentMode;
 if (isIE) {
-  window.location.replace("https://support.peta.org/page/30610/donate/1");
+  window.location.replace("https://support.peta.org/page/30610/donate/1?en_txn7=don::SDHCarepackage-IE11-Redirect&supporter.appealCode=IXXXWBXXXXH");
 }
 
 
