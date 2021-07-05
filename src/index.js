@@ -1,44 +1,54 @@
 import scss from "./sass/main.scss";
 // import noUiSlider from 'nouislider';
 
-import { options, donations } from './config.js';
+import { options } from "./config.js";
 
-
-let isIE = /*@cc_on!@*/false || !!document.documentMode;
+let isIE = /*@cc_on!@*/ false || !!document.documentMode;
 if (isIE) {
-  window.location.replace("https://support.peta.org/page/30610/donate/1?en_txn7=don::SDHCarepackage-IE11-Redirect&supporter.appealCode=IXXXWBXXXXH");
+  window.location.replace(
+    "https://support.peta.org/page/30610/donate/1?en_txn7=don::SDHCarepackage-IE11-Redirect&supporter.appealCode=IXXXWBXXXXH"
+  );
 }
-
 
 window.enOnValidate = function() {
   let storedDonations = [];
   const currentDonations = document.querySelectorAll(".donationCard");
   currentDonations.forEach((donation, index) => {
-    const donationAmount = donation.querySelector(".en__component--donationAmount").textContent;
+    const donationAmount = donation.querySelector(
+      ".en__component--donationAmount"
+    ).textContent;
     const quantity = donation.querySelector(".amount").textContent;
-    storedDonations.push({donationAmount: donationAmount, quantity: quantity});
+    storedDonations.push({
+      donationAmount: donationAmount,
+      quantity: quantity,
+    });
   });
   localStorage.setItem("donations", JSON.stringify(storedDonations));
 
-  const customAmountDonation = document.querySelector(".en__component--customAmount input").value;
+  const customAmountDonation = document.querySelector(
+    ".en__component--customAmount input"
+  ).value;
   localStorage.setItem("customDonation", customAmountDonation);
 
   const repeatGift = document.querySelector("*[name='transaction.recurrpay']");
   localStorage.setItem("repeatGift", repeatGift.checked);
 
   return true;
-}
+};
 
 // window.enOnError = function() {
 //   console.log('Validation failed');
 // }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-
-  const inputDonation = document.querySelector("*[name='transaction.donationAmt.other']");
+window.addEventListener("DOMContentLoaded", (event) => {
+  const inputDonation = document.querySelector(
+    "*[name='transaction.donationAmt.other']"
+  );
 
   const values = [];
-  const radioButtonsContainer = document.querySelector(".en__field--donationAmt.en__field--withOther .en__field__element--radio");
+  const radioButtonsContainer = document.querySelector(
+    ".en__field--donationAmt.en__field--withOther .en__field__element--radio"
+  );
   const radioButtons = radioButtonsContainer.children;
   const secondLastRadio = radioButtons[radioButtons.length - 2];
   const inputBtn = secondLastRadio.firstElementChild;
@@ -46,21 +56,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   const recurrPay = document.querySelector(".en__field--recurrpay");
   recurrPay.classList.add("en__component--carePackage-content");
-  recurrPay.querySelector('label.en__field__label').remove();
-  recurrPay.querySelector('.en__field__element--checkbox').classList.add('carePackage-content');
-  recurrPay.querySelector('.en__field__element--checkbox .en__field__item').classList.add('container');
+  recurrPay.querySelector("label.en__field__label").remove();
+  recurrPay
+    .querySelector(".en__field__element--checkbox")
+    .classList.add("carePackage-content");
+  recurrPay
+    .querySelector(".en__field__element--checkbox .en__field__item")
+    .classList.add("container");
 
-  const checkbox = recurrPay.querySelector('.en__field__element--checkbox .en__field__item label');
-  checkbox.insertAdjacentHTML('beforeend', '<div class="checkmark"></div>');
+  const checkbox = recurrPay.querySelector(
+    ".en__field__element--checkbox .en__field__item label"
+  );
+  checkbox.insertAdjacentHTML("beforeend", '<div class="checkmark"></div>');
 
-  recurrPay.insertAdjacentHTML('afterbegin', `
+  recurrPay.insertAdjacentHTML(
+    "afterbegin",
+    `
   <div class="carePackage-total">
   <h3>Care Package Total</h3>
   <div class="totalAmount">0</div>
   </div>
-  `);
+  `
+  );
 
-  recurrPay.insertAdjacentHTML('beforeend', `
+  recurrPay.insertAdjacentHTML(
+    "beforeend",
+    `
   <div class="carePackage-image">
   <svg xmlns="http://www.w3.org/2000/svg" width="218" height="200" fill="none" viewBox="0 0 218 200">
         <g clip-path="url(#clip0)">
@@ -79,13 +100,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             </clipPath>
         </defs>
     </svg>
-  </div>`);
+  </div>`
+  );
 
   if (inputDonation) {
     inputDonation.value = 0;
     const donationButtons = document.querySelector(".en__field--donationAmt");
     donationButtons.style.display = "none";
-    window.addEventListener('load', function () {
+    window.addEventListener("load", function() {
       displayDonations();
       lastElement();
       moveBasicFields();
@@ -95,29 +117,34 @@ window.addEventListener('DOMContentLoaded', (event) => {
       moveError();
       listenMonthlyCheckbox();
 
-      document.querySelector('.en__field--donationAmt.en__field--radio .en__field__element .en__field__item:nth-last-child(2) input').checked = true; // Check the second to last Gift Amount field so that the other amount field is used for the gift amount
+      document.querySelector(
+        ".en__field--donationAmt.en__field--radio .en__field__element .en__field__item:nth-last-child(2) input"
+      ).checked = true; // Check the second to last Gift Amount field so that the other amount field is used for the gift amount
     });
 
-    if (localStorage.getItem('repeatGift') === 'true') {
+    if (localStorage.getItem("repeatGift") === "true") {
       document.querySelector("*[name='transaction.recurrpay']").checked = true;
     }
-
   }
 
   function displayDonations() {
-
-    let donationsHTML = '';
+    let donationsHTML = "";
     let localStorageDonations = [];
 
     if (localStorage.getItem("donations") !== null) {
-      localStorageDonations = JSON.parse(localStorage.getItem('donations'));
+      localStorageDonations = JSON.parse(localStorage.getItem("donations"));
     }
 
-    donations.forEach((e, i) => {
-
+    options.donations.forEach((e, i) => {
       donationsHTML += `<div class="en__component en__component en__component--column donationCard">
       <div class="en__component--wrap">
-        <div class='en__component--donationAmount ${e.urgent ? 'urgent' : '' }'>${localStorage.getItem('donations') ? localStorageDonations[i].donationAmount : e.donationAmount}</div>
+        <div class='en__component--donationAmount ${
+          e.urgent ? "urgent" : ""
+        }'>${
+        localStorage.getItem("donations")
+          ? localStorageDonations[i].donationAmount
+          : e.donationAmount
+      }</div>
         <img src="${e.imageURL}" border="0" />
         <div class="en__component en__component--content">
           <h1>${e.title}</h1>
@@ -125,14 +152,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
           <div class="en__component en__component--selectAmount">
             <div class="decrease"></div>
-            <div class="amount">${localStorage.getItem('donations') ? localStorageDonations[i].quantity : e.quantity}</div>
+            <div class="amount">${
+              localStorage.getItem("donations")
+                ? localStorageDonations[i].quantity
+                : e.quantity
+            }</div>
             <div class="increase"></div>
           </div><!-- en__component--selectAmount -->
           <div class="en__component--quantity">Quantity</div>
 
         </div>
       </div>
-    </div>`
+    </div>`;
     });
 
     if (options.customAmount) {
@@ -143,7 +174,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             <h1>Amount of<br>your choice</h1>
             <div class='en__component--customDonationAmount-wrap'>
               <div class='en__component--customDonationAmount'>
-                <input type="number" step="any" placeholder="Other Amount" min="0" value="${localStorage.getItem('customDonation') ? localStorage.getItem('customDonation') : 0 }" />
+                <input type="number" step="any" placeholder="Other Amount" min="0" value="${
+                  localStorage.getItem("customDonation")
+                    ? localStorage.getItem("customDonation")
+                    : 0
+                }" />
                 <div class="en__component--usd">USD</div>
               </div>
             </div>
@@ -153,10 +188,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
       </div>
       `;
     }
-    
 
     const shoppingCart = document.querySelector(".en__component--row--1");
-    shoppingCart.insertAdjacentHTML('beforebegin', `
+    shoppingCart.insertAdjacentHTML(
+      "beforebegin",
+      `
     <div class="en__component--hero-wrapper">
     <div class="en__component en__component--row en__component--row--1 en__component--hero" style="background: #B64815 url('${options.heroImage}');background-repeat: no-repeat; background-position: right; background-size: contain;">
 
@@ -167,15 +203,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
         <div class="en__component--hero-content hero-content-responsive">
           <div class="en__component--hero-logo"></div>
           <div class="en__component--hero-hero-titles">
-            <h1>Help a Distressed 'Backyard Dog' Survive the Summer</h1>
+            <h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>
           </div>
         </div>
 
         <img src="${options.heroImageResponsive}" border="0" />
         
         <div class="en__component--hero-content">
-          <p>The scorching sun and unrelenting heat of summer can be deadly for a dog kept chained outside without adequate shelter. For as little as $2, you can help provide support and care to a lonely dog, or you can give a sturdy doghouse and some relief to a dog struggling to survive the season’s worst weather, by sponsoring a doghouse.</p>
-          <p class="small-bold">Send a care package below—a package of any size will be life-changing for a dog. Plus, our friends at v-dog will donate a 5-pound bag of healthy vegan dog food. Dogs need you!</p>
+          <p>The scorching sun and unrelenting heat of summer can be deadly for dogs chained outside without adequate shelter. Your much-needed gift today will help provide a lonely dog with support and care, or you can give shelter and some relief from the season's worst weather by sponsoring a sturdy doghouse.</p>
+          <p class="small-bold">Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>
         </div>
 
       </div>
@@ -183,9 +219,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
       <div class="en__component--hero-wrap">
         <div class="en__component--hero-logo"></div>
         <div class="en__component--hero-content">
-          <h1>Help a Distressed 'Backyard Dog' Survive the Summer</h1>
-          <p>The scorching sun and unrelenting heat of summer can be deadly for a dog kept chained outside without adequate shelter. For as little as $2, you can help provide support and care to a lonely dog, or you can give a sturdy doghouse and some relief to a dog struggling to survive the season’s worst weather, by sponsoring a doghouse.</p>
-          <p class="small-bold">Send a care package below—a package of any size will be life-changing for a dog. Plus, our friends at v-dog will donate a 5-pound bag of healthy vegan dog food. Dogs need you!</p>
+          <h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>
+          <p>The scorching sun and unrelenting heat of summer can be deadly for dogs chained outside without adequate shelter. Your much-needed gift today will help provide a lonely dog with support and care, or you can give shelter and some relief from the season's worst weather by sponsoring a sturdy doghouse.</p>
+          <p class="small-bold">Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>
         </div>
       </div>
 
@@ -198,10 +234,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     <div class="en__component en__component--row en__component--row--3">
       ${donationsHTML}
     </div>
-    `);
+    `
+    );
 
-    const selectAmounts = document.querySelectorAll('.donationCard');
-    let customDonationAmount = localStorage.getItem('customDonation') ? +localStorage.getItem('customDonation') : 0;
+    const selectAmounts = document.querySelectorAll(".donationCard");
+    let customDonationAmount = localStorage.getItem("customDonation")
+      ? +localStorage.getItem("customDonation")
+      : 0;
 
     if (selectAmounts) {
       getCustomDonationAmount();
@@ -209,16 +248,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function getCustomDonationAmount() {
-      const customAmount = document.querySelector('.en__component--customDonationAmount input');
+      const customAmount = document.querySelector(
+        ".en__component--customDonationAmount input"
+      );
 
-      if (!customAmount){
+      if (!customAmount) {
         return;
       }
 
       updateInput(customDonationAmount);
-      
-      customAmount.addEventListener('input', function(e) {
-        if (e.target.value === '') {
+
+      customAmount.addEventListener("input", function(e) {
+        if (e.target.value === "") {
           customDonationAmount = 0;
           updateInput(0);
         } else {
@@ -226,7 +267,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
           updateInput(customDonationAmount);
         }
       });
-
     }
 
     function setSelectAmounts() {
@@ -237,17 +277,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function createSelectAmount(slider, index) {
+      const decrease = slider.querySelector(".decrease");
+      const increase = slider.querySelector(".increase");
+      const amount = slider.querySelector(".amount");
+      const donationAmount = +slider.querySelector(
+        ".en__component--donationAmount"
+      ).textContent;
+      const currentAmount = +slider.querySelector(
+        ".en__component--selectAmount .amount"
+      ).textContent;
+      values.push({ value: donationAmount, amount: currentAmount });
 
-      const decrease = slider.querySelector('.decrease');
-      const increase = slider.querySelector('.increase');
-      const amount = slider.querySelector('.amount');
-      const donationAmount = +slider.querySelector('.en__component--donationAmount').textContent;
-      const currentAmount = +slider.querySelector('.en__component--selectAmount .amount').textContent;
-      values.push({value: donationAmount, amount: currentAmount});
+      updateInput(
+        localStorage.getItem("customDonation")
+          ? +localStorage.getItem("customDonation")
+          : 0
+      );
 
-      updateInput(localStorage.getItem('customDonation') ? +localStorage.getItem('customDonation') : 0);
-
-      decrease.addEventListener('click', function(e) {
+      decrease.addEventListener("click", function(e) {
         // const valueIndex = Math.max(values[index] - 1, 0);
         // values[index] = Math.max(values[index] - donationAmount, 0);
         const newAmount = Math.max(values[index].amount - 1, 0);
@@ -256,10 +303,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         updateInput(customDonationAmount);
       });
 
-      increase.addEventListener('click', function(e) {
+      increase.addEventListener("click", function(e) {
         // const valueIndex = Math.min(values[index] + 1, steps.length - 1);
         // values[index] = values[index] + donationAmount;
-        const newAmount = values[index].amount + 1
+        const newAmount = values[index].amount + 1;
         values[index].amount = newAmount;
         amount.innerHTML = newAmount;
         updateInput(customDonationAmount);
@@ -273,12 +320,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         return acc + current.value * current.amount;
       }, 0);
 
-      carePackagesTotal.forEach(total => {
-        total.innerHTML = (customAmount + result);
+      carePackagesTotal.forEach((total) => {
+        total.innerHTML = customAmount + result;
       });
-      inputDonation.value = (customAmount + result);
+      inputDonation.value = customAmount + result;
     }
-
   }
 
   function moveBasicFields() {
@@ -286,52 +332,64 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const lastName = document.querySelector(".en__field--lastName");
     const emailAddress = document.querySelector(".en__field--emailAddress");
     const country = document.querySelector(".en__field--country");
-    country.insertAdjacentElement('beforebegin', firstName);
-    country.insertAdjacentElement('beforebegin', lastName);
-    country.insertAdjacentElement('beforebegin', emailAddress);
+    country.insertAdjacentElement("beforebegin", firstName);
+    country.insertAdjacentElement("beforebegin", lastName);
+    country.insertAdjacentElement("beforebegin", emailAddress);
     document.querySelector(".en__donation--billing--info").remove();
 
-    
-
     const billingInfo = document.querySelector(".en__donation--billing--info");
-    billingInfo.classList.add('en__component--column--1');
+    billingInfo.classList.add("en__component--column--1");
 
-    const newDiv2 = document.createElement('div');
+    const newDiv2 = document.createElement("div");
     const postCode = document.querySelector(".en__field--postcode");
-    newDiv2.classList.add('email--signup');
+    newDiv2.classList.add("email--signup");
     postCode.after(newDiv2);
-    
-    billingInfo.insertAdjacentElement('beforeend', billingInfo.nextElementSibling);
-    billingInfo.insertAdjacentElement('beforeend', billingInfo.nextElementSibling);
-    billingInfo.insertAdjacentElement('beforeend', billingInfo.nextElementSibling);
 
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('en__component', 'en__component--formblock', 'en__column--cc', 'en__component--column--2');
-    billingInfo.insertAdjacentElement('afterend', newDiv);
+    billingInfo.insertAdjacentElement(
+      "beforeend",
+      billingInfo.nextElementSibling
+    );
+    billingInfo.insertAdjacentElement(
+      "beforeend",
+      billingInfo.nextElementSibling
+    );
+    billingInfo.insertAdjacentElement(
+      "beforeend",
+      billingInfo.nextElementSibling
+    );
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add(
+      "en__component",
+      "en__component--formblock",
+      "en__column--cc",
+      "en__component--column--2"
+    );
+    billingInfo.insertAdjacentElement("afterend", newDiv);
 
     const columnCC = document.querySelector(".en__column--cc");
-    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
-    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
-    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
-    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
-    columnCC.insertAdjacentElement('beforeend', columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement("beforeend", columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement("beforeend", columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement("beforeend", columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement("beforeend", columnCC.nextElementSibling);
+    columnCC.insertAdjacentElement("beforeend", columnCC.nextElementSibling);
 
     const inputFields = document.querySelector(".en__component--input-fields");
-    inputFields.insertAdjacentElement('afterbegin', columnCC);
-    inputFields.insertAdjacentElement('afterbegin', billingInfo);
-    inputFields.insertAdjacentHTML('beforebegin', `
+    inputFields.insertAdjacentElement("afterbegin", columnCC);
+    inputFields.insertAdjacentElement("afterbegin", billingInfo);
+    inputFields.insertAdjacentHTML(
+      "beforebegin",
+      `
     <div class="en__component en__component--row en__component--row--1 en__component--complete-heading">
       <div class="en__component en__component en__component--column en__component--column--1">
         <h1>Complete Your $<div class="totalAmount">0</div> <span class="monthly" style="display: none">Monthly</span> Donation</h1>
       </div>
-    </div>`);
+    </div>`
+    );
 
-    
-
-    newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
-    newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
-    newDiv2.insertAdjacentElement('afterbegin', billingInfo.lastElementChild);
-
+    newDiv2.insertAdjacentElement("afterbegin", billingInfo.lastElementChild);
+    newDiv2.insertAdjacentElement("afterbegin", billingInfo.lastElementChild);
+    newDiv2.insertAdjacentElement("afterbegin", billingInfo.lastElementChild);
   }
 
   function lastElement() {
@@ -341,19 +399,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // lastColumnChild.classList.add('en__column--cc');
     // lastColumn.classList.add('en_component--input-fields');
 
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('en__component', 'en__component--row', 'en__component--row--2', 'en__component--input-fields');
-    lastColumn.insertAdjacentElement('beforebegin', newDiv);
-    
+    const newDiv = document.createElement("div");
+    newDiv.classList.add(
+      "en__component",
+      "en__component--row",
+      "en__component--row--2",
+      "en__component--input-fields"
+    );
+    lastColumn.insertAdjacentElement("beforebegin", newDiv);
   }
 
   function wrapElements() {
     const ccvv = document.querySelector(".en__field--ccvv");
     const ccexpire = document.querySelector(".en__field--ccexpire");
-    ccvv.insertAdjacentHTML('beforebegin', `<div class="en__field--ccwrap"></div>`);
-    const ccWrap = document.querySelector('.en__field--ccwrap');
-    ccWrap.insertAdjacentElement('beforeend', ccvv);
-    ccWrap.insertAdjacentElement('beforeend', ccexpire);
+    ccvv.insertAdjacentHTML(
+      "beforebegin",
+      `<div class="en__field--ccwrap"></div>`
+    );
+    const ccWrap = document.querySelector(".en__field--ccwrap");
+    ccWrap.insertAdjacentElement("beforeend", ccvv);
+    ccWrap.insertAdjacentElement("beforeend", ccexpire);
 
     // Placed here because it's dependent on other elements to have been moved/wrapped before it fires
     const postCode2 = document.querySelector(".email--signup");
@@ -361,19 +426,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
     ccWrap2.after(postCode2);
   }
 
-  function showBody(){
-    document.body.className += ' showBody';
+  function showBody() {
+    document.body.className += " showBody";
   }
 
   function carePackageBtn() {
+    const carePackageBtn = document.querySelectorAll(
+      ".en__component--button-cta"
+    );
 
-    const carePackageBtn = document.querySelectorAll(".en__component--button-cta");
-
-    carePackageBtn.forEach(btn => {
-      btn.addEventListener('click', function (e) {
+    carePackageBtn.forEach((btn) => {
+      btn.addEventListener("click", function(e) {
         e.preventDefault();
-        document.querySelector('.en__component--heading').scrollIntoView({
-            behavior: 'smooth'
+        document.querySelector(".en__component--heading").scrollIntoView({
+          behavior: "smooth",
         });
       });
     });
@@ -385,10 +451,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (errorHeader && errorHeader.parentNode) {
       const errorParent = errorHeader.parentNode;
       errorParent.appendChild(errorHeader);
-      errorFields.forEach(error => {
+      errorFields.forEach((error) => {
         errorParent.appendChild(error);
       });
-      setTimeout(function() { 
+      setTimeout(function() {
         errorHeader.scrollIntoView();
       }, 1000);
     } else {
@@ -397,15 +463,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function listenMonthlyCheckbox() {
-    const checkbox = document.querySelector('input[name="transaction.recurrpay"]');
-    const monthly = document.querySelector(".en__component--complete-heading .monthly");
-    checkbox.addEventListener('change', function() {
+    const checkbox = document.querySelector(
+      'input[name="transaction.recurrpay"]'
+    );
+    const monthly = document.querySelector(
+      ".en__component--complete-heading .monthly"
+    );
+    checkbox.addEventListener("change", function() {
       if (this.checked) {
-        monthly.style.display = "inline-block"
+        monthly.style.display = "inline-block";
       } else {
-        monthly.style.display = "none"
+        monthly.style.display = "none";
       }
     });
   }
-
 });
