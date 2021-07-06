@@ -1,9 +1,9 @@
 let options = {
   title: "<strong>Select Gift(s)</strong> (as many as you would like):",
-  responsiveTitle: "<strong>Select gift(s)</strong>",
+  responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage:
-    "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg",
+    "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/Shop-Choose-Amount-SDH21.jpg",
   heroImage: "https://martin.4sitestudios.com/peta/hero.png",
   heroImageResponsive:
     "https://martin.4sitestudios.com/peta/hero-responsive.png",

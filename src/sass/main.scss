@@ -1,14 +1,23 @@
 @import "reset";
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap");
 
-body{
+body {
   background-color: #ffffff !important;
   padding: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+em {
+  font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: inherit !important;
   text-transform: none !important;
 }
@@ -28,7 +37,24 @@ p {
   line-height: 1.4;
 }
 
-.en__button, .en__field__element--calendar, .en__field__element--checkbox, .en__field__element--email, .en__field__element--number, .en__field__element--password, .en__field__element--radio, .en__field__element--range, .en__field__element--rating, .en__field__element--select, .en__field__element--splitselect, .en__field__element--splittext, .en__field__element--telephone, .en__field__element--text, .en__field__element--textarea, .en__field__element--tripleselect, .en__field__element--tripletext, .en__field__item {
+.en__button,
+.en__field__element--calendar,
+.en__field__element--checkbox,
+.en__field__element--email,
+.en__field__element--number,
+.en__field__element--password,
+.en__field__element--radio,
+.en__field__element--range,
+.en__field__element--rating,
+.en__field__element--select,
+.en__field__element--splitselect,
+.en__field__element--splittext,
+.en__field__element--telephone,
+.en__field__element--text,
+.en__field__element--textarea,
+.en__field__element--tripleselect,
+.en__field__element--tripletext,
+.en__field__item {
   // display: block;
 }
 
@@ -110,7 +136,6 @@ p {
     h1.responsive {
       display: none;
     }
-    
   }
 
   h1 {
@@ -121,12 +146,13 @@ p {
       font-weight: bold !important;
     }
   }
-
 }
 
-input[type="text"], input[type="number"], input[type="email"] {
+input[type="text"],
+input[type="number"],
+input[type="email"] {
   background-color: #f7f7fa;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 4px;
   height: 48px;
   // min-width: 240px;
@@ -146,7 +172,7 @@ label.en__field__label {
 select {
   height: 48px;
   border-radius: 4px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   width: 100%;
   // @media (min-width: 641px) {
   //   min-width: 258px;
@@ -154,15 +180,17 @@ select {
   // }
 }
 
-.en__field__helpText, .en__field__label {
+.en__field__helpText,
+.en__field__label {
   padding: 6px 0;
 }
 
-.en__captcha, .en__field {
+.en__captcha,
+.en__field {
   padding-bottom: 0 !important;
 }
 
-.en__component--row:not(.en__component--hero){
+.en__component--row:not(.en__component--hero) {
   max-width: 65rem;
   margin-left: auto;
   margin-right: auto;
@@ -170,7 +198,7 @@ select {
 
 .en__component--row--2 {
   display: flex;
-  @media (max-width:640px) {
+  @media (max-width: 640px) {
     flex-direction: column;
   }
   // flex-wrap: wrap;
@@ -205,23 +233,22 @@ select {
       width: calc(50% - 20px) !important;
       margin: 10px;
     }
-  
+
     @media screen and (min-width: 840px) {
       flex: 0 1 auto;
       width: calc(33.33% - 20px) !important;
     }
   }
-
 }
 
 @media (max-width: 840px) {
   div.en__component--hero[style] {
-    background: #B64815 !important;
+    background: #b64815 !important;
   }
 }
 
 .en__component--hero-wrapper {
-  background: #B64815;
+  background: #b64815;
 }
 
 .en__component--hero {
@@ -235,10 +262,11 @@ select {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  background: #B64815; //  url("/imgs/hero.8497d40aad9e402699451602f0cbdbe2.png");
+  background: #b64815; //  url("/imgs/hero.8497d40aad9e402699451602f0cbdbe2.png");
 
-  h1, h2 {
-    color: #FFFFFF;
+  h1,
+  h2 {
+    color: #ffffff;
   }
 
   // @media (min-width: 840px) {
@@ -249,7 +277,6 @@ select {
   // }
 
   .en__component--hero-wrap-responsive {
-
     .en__component--button-cta {
       display: none;
     }
@@ -293,7 +320,7 @@ select {
   }
 
   &-content {
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 10px 50px;
     width: auto;
 
@@ -302,13 +329,13 @@ select {
     }
 
     button.en__component--button-cta {
-      background: #FBE706;
+      background: #fbe706;
       transition: background 0.2s ease-in-out;
       border: 0;
       padding: 20px 40px;
       border-radius: 4px;
       font-size: 17px;
-      color: #B64815;
+      color: #b64815;
       font-weight: bold;
       margin-top: 24px;
       cursor: pointer;
@@ -316,7 +343,7 @@ select {
 
     button.en__component--button-cta:hover {
       transition: background 0.2s ease-in-out;
-      background: lighten(#FBE706, 50%);
+      background: lighten(#fbe706, 50%);
     }
 
     h1 {
@@ -324,7 +351,7 @@ select {
       font-weight: 800;
       // font-size: 57px;
       font-size: 30px;
-      color: #FBE706;
+      color: #fbe706;
       margin-bottom: 20px;
     }
 
@@ -371,7 +398,8 @@ select {
     text-align: center;
   }
 
-  .increase, .decrease {
+  .increase,
+  .decrease {
     // width: 30px;
     // height: 30px;
     cursor: pointer;
@@ -385,7 +413,6 @@ select {
     line-height: 25px;
     content: url("data:image/svg+xml;charset=UTF-8, <svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='15' cy='15' r='14.5' stroke='%23344857'/><rect x='11' y='15' width='8' height='1' fill='%23344857'/><rect x='15.5' y='11.5' width='8' height='1' transform='rotate(90 15.5 11.5)' fill='%23344857'/></svg>");
   }
-
 }
 
 .en__component--carePackage {
@@ -415,9 +442,9 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #EA9412; //#344857;
-    background: #EA9412;
-    color: #FFFFFF;
+    border: 1px solid #ea9412; //#344857;
+    background: #ea9412;
+    color: #ffffff;
     border-radius: 4px;
     padding: 32px;
     width: 100%;
@@ -495,7 +522,7 @@ select {
   img {
     display: none;
   }
-  .en__component--donationAmount  {
+  .en__component--donationAmount {
     display: none;
   }
 
@@ -503,7 +530,7 @@ select {
     img {
       display: block;
     }
-    .en__component--donationAmount  {
+    .en__component--donationAmount {
       display: block;
     }
   }
@@ -511,14 +538,14 @@ select {
 
 .en__component--wrap {
   height: 100%;
-  background-color: #FFF0CA;
+  background-color: #fff0ca;
 }
 
 .en__component--customAmount {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #EA9412;
+  background: #ea9412;
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
@@ -559,10 +586,10 @@ select {
     display: flex;
     flex-direction: row;
     flex: 0;
-    background: #FFFFFF;
+    background: #ffffff;
     color: #344857;
     padding: 0 16px;
-    
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -570,7 +597,7 @@ select {
     }
 
     /* Firefox */
-    input[type=number] {
+    input[type="number"] {
       -moz-appearance: textfield;
     }
 
@@ -583,7 +610,7 @@ select {
       font-size: 16px;
       font-family: ProximaNova, sans-serif;
       color: #344857;
-      background-color: #FFFFFF;
+      background-color: #ffffff;
       min-width: auto;
     }
 
@@ -604,7 +631,7 @@ select {
 
   .en__component--content h1 {
     font-size: 34px;
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     font-family: "Raleway", sans-serif;
     font-weight: 800;
     line-height: 32px;
@@ -620,7 +647,6 @@ select {
     //   position: absolute;
     // }
   }
-
 }
 
 .en__component--content {
@@ -631,7 +657,7 @@ select {
   font-size: 22px;
   font-family: "proxima-nova", sans-serif;
   z-index: 10;
-  
+
   h1 {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
@@ -647,7 +673,7 @@ select {
 }
 
 .en__component--donationAmount.urgent {
-  background: #E93F23;
+  background: #e93f23;
 
   &::after {
     display: flex;
@@ -657,14 +683,13 @@ select {
     top: -21px;
     content: url("data:image/svg+xml;charset=UTF-8, <svg width='61' height='61' viewBox='0 0 61 61' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.0785 26.8322C6.09771 28.3463 6.29299 29.9669 8.17637 31.187C10.0413 32.395 11.5941 31.9199 12.5869 30.3874L14.9791 26.6945L13.6496 25.8333L11.2814 29.4892C10.7252 30.3478 9.87159 30.6337 8.92991 30.0237C7.96975 29.4017 7.88166 28.5059 8.43785 27.6473L10.8061 23.9913L9.47668 23.1301L7.0785 26.8322Z' fill='white'/><path d='M17.709 35.5481L19.3998 36.1446L18.7734 32.9608C19.5825 33.048 20.5807 32.6653 21.0125 31.4412C21.4663 30.1549 20.9176 28.8999 19.4757 28.3912L16.2392 27.2493L13.7982 34.1684L15.2712 34.688L16.1459 32.2088L17.2247 32.5894L17.709 35.5481ZM19.512 30.9002C19.3071 31.4811 18.7293 31.6972 18.138 31.4886L16.5924 30.9433L17.2658 29.0346L18.8114 29.5799C19.4027 29.7885 19.717 30.3193 19.512 30.9002Z' fill='white'/><path d='M21.7453 34.0483C21.5097 36.3463 23.108 38.0139 25.2418 38.2327C26.5659 38.3684 27.6615 37.9278 28.4908 37.1724L28.7769 34.3821L25.2971 34.0254L25.1603 35.3604L27.1081 35.56L27.0172 36.4464C26.6707 36.6984 26.0518 36.9114 25.3843 36.8429C24.0602 36.7072 23.2016 35.5908 23.3429 34.2121C23.4842 32.8333 24.5515 31.9143 25.8755 32.0501C26.6415 32.1286 27.2238 32.5974 27.5103 33.1465L28.8733 32.5785C28.4038 31.6568 27.527 30.8261 26.0169 30.6713C23.8831 30.4526 21.9819 31.7394 21.7453 34.0483Z' fill='white'/><path d='M31.6885 38.2188L36.8336 37.5226L36.6521 36.1818L33.0549 36.6686L32.8263 34.979L36.3472 34.5025L36.1672 33.1726L32.6463 33.6491L32.4324 32.0685L36.0297 31.5817L35.8497 30.2518L30.7046 30.9481L31.6885 38.2188Z' fill='white'/><path d='M45.1975 35.0224L46.6033 34.4795L43.9599 27.6352L42.5028 28.198L44.2149 32.6308L39.3321 29.4226L37.834 30.0012L40.4773 36.8454L41.9344 36.2827L40.159 31.6856L45.1975 35.0224Z' fill='white'/><path d='M51.4205 31.5104L52.715 30.6167L49.3277 25.7103L51.0839 24.4979L50.3027 23.3664L45.4869 26.6911L46.2681 27.8227L48.0333 26.604L51.4205 31.5104Z' fill='white'/></svg>");
   }
-
 }
 
 .en__component--donationAmount {
   position: absolute;
   margin: 6px 0 0 6px;
-  background: #EA9412;
-  color: #FFFFFF;
+  background: #ea9412;
+  color: #ffffff;
   padding: 24px 4px;
   font-size: 24px;
   text-transform: uppercase;
@@ -737,7 +762,7 @@ select {
     background: #e93f23;
     padding: 20px 40px;
     border-radius: 4px;
-    color: #FFFFFF;
+    color: #ffffff;
     border: 0;
     font-size: 17px;
     font-family: "Open Sans", sans-serif;
@@ -791,8 +816,7 @@ select {
   .en__component--column--1 {
     display: flex;
     flex: 1 1 auto;
-    
-    
+
     @media (min-width: 641px) {
       align-items: flex-start;
       align-content: flex-start;
@@ -816,7 +840,7 @@ select {
     @media (min-width: 921px) {
       max-width: 528px;
     }
-    
+
     input {
       width: 100%;
     }
@@ -838,17 +862,16 @@ select {
 }
 
 .en__component--input-fields {
-
   .en__component--column--1 {
     @media (min-width: 641px) {
       margin-left: 10px;
     }
-    
+
     flex-basis: 100%;
     flex: 2;
     // flex: 0 1 auto;
     // width: auto;
-    @media (min-width:966px) {
+    @media (min-width: 966px) {
       // flex: 1 0 55%;
       // width: 50%;
     }
@@ -867,8 +890,6 @@ select {
     flex-basis: 100%;
     flex: 1;
   }
-
-
 }
 
 .en__donation--billing--info {
@@ -909,7 +930,6 @@ select {
   .en__field {
     margin-bottom: 12px;
   }
-
 }
 
 .cc__icons {
@@ -921,7 +941,7 @@ select {
     li {
       margin-right: 6px;
     }
-  } 
+  }
 }
 
 .en__field--ccexpire {
@@ -950,13 +970,14 @@ select {
   }
 
   .en__field__element--splitselect {
-
     .en__field__item:not(:last-child) {
-        margin: 0 12px 12px 0;
+      margin: 0 12px 12px 0;
     }
   }
 
-  input[type="number"], input[type="text"], input[type="email"] {
+  input[type="number"],
+  input[type="text"],
+  input[type="email"] {
     min-width: 0;
   }
 
@@ -964,7 +985,7 @@ select {
     width: 115px;
     margin-right: 12px;
 
-    .en__field__element--text{
+    .en__field__element--text {
       position: relative;
     }
 
@@ -972,7 +993,7 @@ select {
       width: 100% !important;
     }
 
-    .ccvv__link{
+    .ccvv__link {
       position: absolute;
       top: -25px;
       right: 0;
@@ -982,7 +1003,6 @@ select {
   .en__field__item {
     padding: 0;
   }
-  
 }
 
 select {
@@ -996,8 +1016,8 @@ select {
 }
 
 .en__errorHeader {
-  background: #E93F23;
-  color: #FFFFFF !important;
+  background: #e93f23;
+  color: #ffffff !important;
   padding: 16px !important;
   margin: 0 10px 10px 10px;
   border-radius: 4px;
@@ -1009,11 +1029,21 @@ select {
 }
 
 /* These fields should not be visible */
-body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--bankRoutingNumber,
-body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--bankAccountNumber,
-body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NOT_TAGGED_60,
-body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--bankAccountType,
-body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NOT_TAGGED_99{
+body:not(#en__pagebuilder)
+  .en__component--input-fields
+  .en__field.en__field--bankRoutingNumber,
+body:not(#en__pagebuilder)
+  .en__component--input-fields
+  .en__field.en__field--bankAccountNumber,
+body:not(#en__pagebuilder)
+  .en__component--input-fields
+  .en__field.en__field--NOT_TAGGED_60,
+body:not(#en__pagebuilder)
+  .en__component--input-fields
+  .en__field.en__field--bankAccountType,
+body:not(#en__pagebuilder)
+  .en__component--input-fields
+  .en__field.en__field--NOT_TAGGED_99 {
   display: none;
 }
 
@@ -1021,7 +1051,9 @@ body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NO
   order: 1;
 }
 
-.en__donation--billing--info .en__field--emailAddress .en__field__element::after{
+.en__donation--billing--info
+  .en__field--emailAddress
+  .en__field__element::after {
   width: 100%;
 }
 
@@ -1058,7 +1090,7 @@ body:not(#en__pagebuilder) .en__component--input-fields .en__field.en__field--NO
 }
 
 .en__field--emailAddress {
-  order: 9; 
+  order: 9;
 }
 
 .smaller_text p {
