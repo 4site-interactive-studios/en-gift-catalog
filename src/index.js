@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     "afterbegin",
     `
   <div class="carePackage-total">
-  <h3>My care package for <br> a dog in need</h3>
+  <h3>My care package for <br> a dog in need:</h3>
   <div class="totalAmount">0</div>
   </div>
   `

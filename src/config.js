@@ -1,5 +1,5 @@
 let options = {
-  title: "<strong>Select Gift(s)</strong> (as many as you would like):",
+  title: "<strong>Select Gifts</strong> (as many as you would like):",
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage:
