@@ -515,8 +515,8 @@ var options = {
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/Shop-Choose-Amount-SDH21.jpg",
-  heroImage: "https://martin.4sitestudios.com/peta/hero.png",
-  heroImageResponsive: "https://martin.4sitestudios.com/peta/hero-responsive.png",
+  heroImage: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/hero.png",
+  heroImageResponsive: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/hero-responsive.png",
   footerContent: "Contact PETA  |  Disclaimer  |  Privacy Policy  |  Contest Terms and Conditions  |  Texting Terms and Conditions  |  Terms of Use  |  Donate Now  |  Report Website Abuse  |  \xA9 2021 PETA. Read our full policy.<br><br>\n\n  People for the Ethical Treatment of Animals<br>\n  501 Front St., Norfolk, VA 23510<br>\n  757-622-PETA (7382)<br>\n  757-622-0457 (fax)<br><br>\n  \n  PETA is a nonprofit, tax-exempt 501(c)(3) corporation (tax ID number 52-1218336)<br><br>\n  \n  image attribution \xA9 source | source additional info",
   donations: [{
     id: 0,
