@@ -1,5 +1,9 @@
 let options = {
   title: "<strong>Select Gifts</strong> (as many as you would like):",
+  heroTitle: "<h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>",
+  heroCopy: `
+    <p>The scorching sun and unrelenting heat of summer can be deadly for dogs chained outside without adequate shelter. Your much-needed gift today will help provide a lonely dog with support and care, or you can give shelter and some relief from the season's worst weather by sponsoring a sturdy doghouse.</p>
+    <p class='small-bold'>Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>`,
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage:

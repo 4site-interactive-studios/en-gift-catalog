@@ -210,8 +210,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         <img src="${options.heroImageResponsive}" border="0" />
         
         <div class="en__component--hero-content">
-          <p>The scorching sun and unrelenting heat of summer can be deadly for dogs chained outside without adequate shelter. Your much-needed gift today will help provide a lonely dog with support and care, or you can give shelter and some relief from the season's worst weather by sponsoring a sturdy doghouse.</p>
-          <p class="small-bold">Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>
+          ${options.heroCopy}
         </div>
 
       </div>
@@ -219,9 +218,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       <div class="en__component--hero-wrap">
         <div class="en__component--hero-logo"></div>
         <div class="en__component--hero-content">
-          <h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>
-          <p>The scorching sun and unrelenting heat of summer can be deadly for dogs chained outside without adequate shelter. Your much-needed gift today will help provide a lonely dog with support and care, or you can give shelter and some relief from the season's worst weather by sponsoring a sturdy doghouse.</p>
-          <p class="small-bold">Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>
+          ${options.heroTitle}          
+          ${options.heroCopy}
         </div>
       </div>
 
