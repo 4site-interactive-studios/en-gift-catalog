@@ -828,7 +828,7 @@ select {
     flex: 1 1 20%;
     flex-direction: column;
   }
-  .en__field {
+  .en__field:not(.en__hidden) {
     display: flex;
     flex-direction: column;
   }
