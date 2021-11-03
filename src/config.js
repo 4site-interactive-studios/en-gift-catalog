@@ -1,16 +1,18 @@
 let options = {
-  title: "<strong>Select Gifts</strong> (as many as you would like):",
+  title: "<strong>Select gift(s)</strong> <em>(select as many as you would like):</em>",
   heroTitle: "<h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>",
   heroCopy: `
     <p>The scorching sun and unrelenting heat of summer can be deadly for dogs chained outside without adequate shelter. Your much-needed gift today will help provide a lonely dog with support and care, or you can give shelter and some relief from the season's worst weather by sponsoring a sturdy doghouse.</p>
-    <p class='small-bold'>Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>`,
+    <p class='small-bold'>Your care package of any size will make a life-changing difference to a dog in need. <em>Dogs need you!</em></p>
+    <input type="button" value="Send your care package!" onClick="document.getElementById('en__component--heading').scrollIntoView();">
+    `,
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage:
     "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/Shop-Choose-Amount-SDH21.jpg",
-  heroImage: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/hero.png",
+  heroImage: "/src/img/img-doghouse_2x.jpg",
   heroImageResponsive:
-    "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/hero-responsive.png",
+    "/src/img/img-doghouse-responsive.jpg",
   footerContent: `Contact PETA  |  Disclaimer  |  Privacy Policy  |  Contest Terms and Conditions  |  Texting Terms and Conditions  |  Terms of Use  |  Donate Now  |  Report Website Abuse  |  © 2021 PETA. Read our full policy.<br><br>
 
   People for the Ethical Treatment of Animals<br>

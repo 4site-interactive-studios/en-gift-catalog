@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     "afterbegin",
     `
   <div class="carePackage-total">
-  <h3>My care package for <br> a dog in need:</h3>
+  <p>Care Package <br> Total</p>
   <div class="totalAmount">0</div>
   </div>
   `
@@ -171,7 +171,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       <div class="en__component en__component en__component--column">
         <div class="en__component--wrap en__component--customAmount">
           <div class="en__component en__component--content">
-            <h1>Additional gift <br> of your choice:</h1>
+            <h1>Amount of<br> your choice</h1>
             <div class='en__component--customDonationAmount-wrap'>
               <div class='en__component--customDonationAmount'>
                 <input type="number" step="any" placeholder="Other Amount" min="0" value="${
@@ -194,7 +194,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       "beforebegin",
       `
     <div class="en__component--hero-wrapper">
-    <div class="en__component en__component--row en__component--row--1 en__component--hero" style="background: #B64815 url('${options.heroImage}');background-repeat: no-repeat; background-position: right; background-size: contain;">
+    <div class="en__component en__component--row en__component--row--1 en__component--hero" style="background: #418FDE url('${options.heroImage}');background-repeat: no-repeat; background-position: right; background-size: contain;">
 
       <div class="en__component--hero-wrap-responsive">
 
