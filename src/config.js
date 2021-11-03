@@ -10,9 +10,9 @@ let options = {
   customAmount: true,
   customAmountImage:
     "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/Shop-Choose-Amount-SDH21.jpg",
-  heroImage: "/src/img/img-doghouse_2x.jpg",
+  heroImage: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/img-doghouse_2x.jpg?v=1635978212000",
   heroImageResponsive:
-    "/src/img/img-doghouse-responsive.jpg",
+    "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/img-doghouse.jpg?v=1635978213000",
   footerContent: `Contact PETA  |  Disclaimer  |  Privacy Policy  |  Contest Terms and Conditions  |  Texting Terms and Conditions  |  Terms of Use  |  Donate Now  |  Report Website Abuse  |  © 2021 PETA. Read our full policy.<br><br>
 
   People for the Ethical Treatment of Animals<br>
