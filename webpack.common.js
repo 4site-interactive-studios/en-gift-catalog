@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    "shopping-cart": "./src/index.js"
+    "winter-dog-house": "./src/index.js"
   },
   optimization: {
     minimize: false
