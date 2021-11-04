@@ -221,6 +221,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
           ${options.heroTitle}          
           ${options.heroCopy}
         </div>
+        
       </div>
 
     </div>
