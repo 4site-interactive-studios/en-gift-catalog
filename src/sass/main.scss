@@ -248,12 +248,12 @@ select {
 
 @media (max-width: 840px) {
   div.en__component--hero[style] {
-    background: #418FDE !important;
+    background: #418fde !important;
   }
 }
 
 .en__component--hero-wrapper {
-  background: #418FDE;
+  background: #418fde;
 }
 
 .en__component--hero {
@@ -379,8 +379,8 @@ select {
     }
 
     input {
-      background-color:#F5BA37;
-      color: #FFFFFF;
+      background-color: #f5ba37;
+      color: #ffffff;
       font-size: 20px;
       font-weight: bold;
       border: none;
@@ -437,7 +437,7 @@ select {
 }
 
 .en__component--carePackage-content {
-  background: #E5ECEF;
+  background: #e5ecef;
   color: #344857;
   // width: 100%;
   height: auto;
@@ -462,7 +462,7 @@ select {
     border: 1px solid #344857; //#344857;
     color: #344857;
     border-radius: 4px;
-    padding: 32px;
+    padding: 20px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -555,14 +555,14 @@ select {
 
 .en__component--wrap {
   height: 100%;
-  background-color: #E5ECEF;
+  background-color: #e5ecef;
 }
 
 .en__component--customAmount {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #418FDE;
+  background: #418fde;
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
@@ -705,7 +705,7 @@ select {
 .en__component--donationAmount {
   position: absolute;
   margin: 6px 0 0 6px;
-  background: #F5BA37;
+  background: #f5ba37;
   color: #ffffff;
   padding: 24px 4px;
   font-size: 24px;
@@ -776,7 +776,7 @@ select {
   display: flex;
   margin: 50px auto;
   button {
-    background: #418FDE;
+    background: #418fde;
     padding: 20px 40px;
     border-radius: 4px;
     color: #ffffff;

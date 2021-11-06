@@ -10,7 +10,7 @@ if (isIE) {
   );
 }
 
-window.enOnValidate = function() {
+window.enOnValidate = function () {
   let storedDonations = [];
   const currentDonations = document.querySelectorAll(".donationCard");
   currentDonations.forEach((donation, index) => {
@@ -69,11 +69,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
   );
   checkbox.insertAdjacentHTML("beforeend", '<div class="checkmark"></div>');
 
+  const boxMessage = options.boxMessage || "Care Package <br> Total";
+
   recurrPay.insertAdjacentHTML(
     "afterbegin",
     `
   <div class="carePackage-total">
-  <p>Care Package <br> Total</p>
+  <p>${boxMessage}</p>
   <div class="totalAmount">0</div>
   </div>
   `
@@ -107,7 +109,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     inputDonation.value = 0;
     const donationButtons = document.querySelector(".en__field--donationAmt");
     donationButtons.style.display = "none";
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
       displayDonations();
       lastElement();
       moveBasicFields();
@@ -203,7 +205,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         <div class="en__component--hero-content hero-content-responsive">
           <div class="en__component--hero-logo"></div>
           <div class="en__component--hero-hero-titles">
-            <h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>
+            ${options.heroTitle}
           </div>
         </div>
 
@@ -257,7 +259,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       updateInput(customDonationAmount);
 
-      customAmount.addEventListener("input", function(e) {
+      customAmount.addEventListener("input", function (e) {
         if (e.target.value === "") {
           customDonationAmount = 0;
           updateInput(0);
@@ -293,7 +295,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
           : 0
       );
 
-      decrease.addEventListener("click", function(e) {
+      decrease.addEventListener("click", function (e) {
         // const valueIndex = Math.max(values[index] - 1, 0);
         // values[index] = Math.max(values[index] - donationAmount, 0);
         const newAmount = Math.max(values[index].amount - 1, 0);
@@ -302,7 +304,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         updateInput(customDonationAmount);
       });
 
-      increase.addEventListener("click", function(e) {
+      increase.addEventListener("click", function (e) {
         // const valueIndex = Math.min(values[index] + 1, steps.length - 1);
         // values[index] = values[index] + donationAmount;
         const newAmount = values[index].amount + 1;
@@ -435,7 +437,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     );
 
     carePackageBtn.forEach((btn) => {
-      btn.addEventListener("click", function(e) {
+      btn.addEventListener("click", function (e) {
         e.preventDefault();
         document.querySelector(".en__component--heading").scrollIntoView({
           behavior: "smooth",
@@ -453,7 +455,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       errorFields.forEach((error) => {
         errorParent.appendChild(error);
       });
-      setTimeout(function() {
+      setTimeout(function () {
         errorHeader.scrollIntoView();
       }, 1000);
     } else {
@@ -468,7 +470,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const monthly = document.querySelector(
       ".en__component--complete-heading .monthly"
     );
-    checkbox.addEventListener("change", function() {
+    checkbox.addEventListener("change", function () {
       if (this.checked) {
         monthly.style.display = "inline-block";
       } else {
