@@ -254,6 +254,11 @@ select {
 
 .en__component--hero-wrapper {
   background: #418fde;
+  .en__component--hero-content {
+    background: #418fde;
+    padding: 10px;
+    border-radius: 30px;
+  }
 }
 
 .en__component--hero {
@@ -282,6 +287,10 @@ select {
   // }
 
   .en__component--hero-wrap-responsive {
+    img {
+      display: block;
+      margin: 10px auto;
+    }
     .en__component--button-cta {
       display: none;
     }
@@ -379,7 +388,7 @@ select {
     }
 
     input {
-      background-color: #f5ba37;
+      background-color: hsl(210, 70%, 36%);
       color: #ffffff;
       font-size: 20px;
       font-weight: bold;
@@ -705,7 +714,7 @@ select {
 .en__component--donationAmount {
   position: absolute;
   margin: 6px 0 0 6px;
-  background: #f5ba37;
+  background: hsl(210, 70%, 36%);
   color: #ffffff;
   padding: 24px 4px;
   font-size: 24px;
