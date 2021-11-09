@@ -173,7 +173,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       <div class="en__component en__component en__component--column">
         <div class="en__component--wrap en__component--customAmount">
           <div class="en__component en__component--content">
-            <h1>Amount of<br> your choice</h1>
+            <h1>Additional gift <br> of your choice:</h1>
             <div class='en__component--customDonationAmount-wrap'>
               <div class='en__component--customDonationAmount'>
                 <input type="number" step="any" placeholder="Other Amount" min="0" value="${

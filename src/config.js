@@ -1,18 +1,18 @@
 let options = {
-  title: "<strong>Select gift(s)</strong> <em>(select as many as you would like):</em>",
+  title: "<strong>Select Gifts</strong> (as many as you would like):",
   heroTitle: "<h1>Help a Neglected Dog Survive the Winter</h1>",
   heroCopy: `
     <p>For dogs kept outside, the bone-chilling temperatures and bitter winds this winter could be deadly. <span style="font-weight: bold">They need your help right now.</span></p>
     <p>Will you change a dog's life by sending an emergency care package today? PETA provides lonely, neglected dogs with shelter,
     lightweight tie-outs to replace heavy chains, and even water buckets that we secure to prevent tipping. Your support will go
     straight to helping dogs suffering in the harsh elements without adequate care and shelter.</p>
-    <input type="button" value="Send your care package!" onClick="document.getElementById('en__component--heading').scrollIntoView();">
     `,
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage:
     "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/2021-Shop-Choose-Amount-WDH1.jpg?v=1636121242000",
-  heroImage: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/img-doghouse.jpg?v=1635978213000",
+  heroImage:
+    "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/img-doghouse.jpg?v=1635978213000",
   heroImageResponsive:
     "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/img-doghouse.jpg?v=1635978213000",
   footerContent: `Contact PETA  |  Disclaimer  |  Privacy Policy  |  Contest Terms and Conditions  |  Texting Terms and Conditions  |  Terms of Use  |  Donate Now  |  Report Website Abuse  |  © 2021 PETA. Read our full policy.<br><br>
