@@ -326,8 +326,12 @@ select {
 
   &-content {
     color: #ffffff;
-    margin: 10px 50px;
+    margin: 10px auto;
     width: auto;
+
+    @media (min-width: 500px) {
+      margin: 10px 50px;
+    }
 
     @media (min-width: 840px) {
       width: 50%;
