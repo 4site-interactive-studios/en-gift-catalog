@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         <div class="en__component--hero-content hero-content-responsive">
           <div class="en__component--hero-logo"></div>
           <div class="en__component--hero-hero-titles">
-            <h1>Help a Lonely 'Backyard Dog' Survive the Summer</h1>
+            <h1>${options.heroTitle}</h1>
           </div>
         </div>
 
