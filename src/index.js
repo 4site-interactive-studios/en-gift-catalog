@@ -194,7 +194,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       "beforebegin",
       `
     <div class="en__component--hero-wrapper">
-    <div class="en__component en__component--row en__component--row--1 en__component--hero" style="background: #418FDE url('${options.heroImage}');background-repeat: no-repeat; background-position: right; background-size: contain;">
+    <div class="en__component en__component--row en__component--row--1 en__component--hero" style="background: #C72B50 url('${options.heroImage}');background-repeat: no-repeat; background-position: right; background-size: contain;">
 
       <div class="en__component--hero-wrap-responsive">
 

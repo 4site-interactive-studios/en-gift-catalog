@@ -4,7 +4,7 @@ let options = {
   heroCopy: `
     <p>Strong winds, snow, and freezing temperatures can be deadly for a dog forced to live outside instead of being in the safety of a loving home.</p>
     <p>Right now, you can send love to a “backyard dog” with a Valentine’s Day care package. Help PETA’s team provide insulated doghouses, lightweight tie-outs to replace heavy chains, much-need care, and more.</p>
-    <p>Change a dog’s life today!</p>
+    <p style="font-weight: bold">Change a dog’s life today!</p>
     <input type="button" value="Send your care package!" onClick="document.getElementById('en__component--heading').scrollIntoView();">
     `,
   responsiveTitle: "<strong>Select Gift(s):</strong>",
