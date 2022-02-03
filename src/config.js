@@ -1,6 +1,6 @@
 let options = {
   title: "<strong>Select gift(s)</strong> <em>(select as many as you would like):</em>",
-  heroTitle: "<h1>Help a Neglected Dog Survive the Winter</h1>",
+  heroTitle: "<h1>Help a Cold, Unloved Dog Survive: Send a Valentine’s Day Gift</h1>",
   heroCopy: `
     <p>Strong winds, snow, and freezing temperatures can be deadly for a dog forced to live outside instead of being in the safety of a loving home.</p>
     <p>Right now, you can send love to a “backyard dog” with a Valentine’s Day care package. Help PETA’s team provide insulated doghouses, lightweight tie-outs to replace heavy chains, much-need care, and more.</p>

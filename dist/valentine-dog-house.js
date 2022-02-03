@@ -512,7 +512,7 @@ var main = __webpack_require__(0);
 // CONCATENATED MODULE: ./src/config.js
 var options = {
   title: "<strong>Select gift(s)</strong> <em>(select as many as you would like):</em>",
-  heroTitle: "<h1>Help a Neglected Dog Survive the Winter</h1>",
+  heroTitle: "<h1>Help a Cold, Unloved Dog Survive: Send a Valentine’s Day Gift</h1>",
   heroCopy: "\n    <p>Strong winds, snow, and freezing temperatures can be deadly for a dog forced to live outside instead of being in the safety of a loving home.</p>\n    <p>Right now, you can send love to a \u201Cbackyard dog\u201D with a Valentine\u2019s Day care package. Help PETA\u2019s team provide insulated doghouses, lightweight tie-outs to replace heavy chains, much-need care, and more.</p>\n    <p style=\"font-weight: bold\">Change a dog\u2019s life today!</p>\n    <input type=\"button\" value=\"Send your care package!\" onClick=\"document.getElementById('en__component--heading').scrollIntoView();\">\n    ",
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
