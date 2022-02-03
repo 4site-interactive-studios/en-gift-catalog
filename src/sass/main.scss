@@ -248,12 +248,12 @@ select {
 
 @media (max-width: 840px) {
   div.en__component--hero[style] {
-    background: #418FDE !important;
+    background: #C72B50 !important;
   }
 }
 
 .en__component--hero-wrapper {
-  background: #418FDE;
+  background: #C72B50;
 }
 
 .en__component--hero {
@@ -321,7 +321,7 @@ select {
   &-logo {
     align-self: flex-start;
     max-width: 117px;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='117' height='118' viewBox='0 0 117 118' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M58.109 117.14C90.2017 117.14 116.218 90.9173 116.218 58.57C116.218 26.2227 90.2017 0 58.109 0C26.0163 0 0 26.2227 0 58.57C0 90.9173 26.0163 117.14 58.109 117.14Z' fill='white'/><path d='M29.4062 42.641H20.5592L11.5342 76.307H19.0102L22.6342 63.212L22.2342 64.937C27.2772 65.379 38.3342 65.468 39.9342 53.169C41.5282 41.27 29.4062 42.641 29.4062 42.641ZM30.2472 56.709C27.7252 59.098 24.0982 58.257 24.0982 58.257L25.1152 54.497L26.4862 49.497C27.0172 49.453 30.6442 49.055 31.6622 49.897C32.7682 50.782 31.9722 55.073 30.2462 56.71L30.2472 56.709Z' fill='%23418FDE'/><path d='M62.4974 45.207C61.9082 44.2655 61.0202 43.5489 59.9754 43.172C53.5614 41.09 48.2964 46.003 44.6244 50.736C40.8956 55.6996 38.7941 61.6955 38.6084 67.901C38.7854 71.573 39.6704 75.687 43.4304 77.147C49.5794 78.695 54.0924 73.475 57.4084 69.14C57.7624 68.521 58.3814 67.99 58.3814 67.282C58.1164 67.149 57.8944 66.928 57.5814 66.928C56.8957 67.9763 56.1266 68.9675 55.2814 69.892C53.1584 71.971 50.4594 73.608 47.3624 72.9C43.9564 71.352 43.8234 67.37 44.1334 63.92C44.287 62.5942 44.5837 61.2889 45.0184 60.027L47.3184 59.363C52.4054 57.682 58.4184 57.328 61.8284 52.196C62.9784 50.249 63.9074 47.33 62.4924 45.206L62.4974 45.207ZM51.1724 56.532C44.2274 58.788 45.9524 57.859 45.9524 57.859C45.9524 57.859 51.2604 42.021 56.6574 43.879C62.1434 45.737 58.1574 54.279 51.1714 56.531L51.1724 56.532Z' fill='%23418FDE'/><path d='M66.4351 42.774L88.6431 42.641L86.6971 49.896L79.4421 50.029L72.0531 76.307H63.9131L71.0351 49.985H64.3551L66.4351 42.774Z' fill='%23418FDE'/><path d='M95.1012 42.729L78.9102 76.263H87.2711L89.8372 70.733H97.3582V76.219L104.702 76.175V42.641L95.1022 42.729H95.1012ZM92.8452 64.096L97.2691 54.496L97.3132 54.363V64.096H92.8452Z' fill='%23418FDE'/></svg>");
+    content: url("data:image/svg+xml;charset=UTF-8, <svg width='117' height='118' viewBox='0 0 117 118' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M58.109 117.14C90.2017 117.14 116.218 90.9173 116.218 58.57C116.218 26.2227 90.2017 0 58.109 0C26.0163 0 0 26.2227 0 58.57C0 90.9173 26.0163 117.14 58.109 117.14Z' fill='white'/><path d='M29.4062 42.641H20.5592L11.5342 76.307H19.0102L22.6342 63.212L22.2342 64.937C27.2772 65.379 38.3342 65.468 39.9342 53.169C41.5282 41.27 29.4062 42.641 29.4062 42.641ZM30.2472 56.709C27.7252 59.098 24.0982 58.257 24.0982 58.257L25.1152 54.497L26.4862 49.497C27.0172 49.453 30.6442 49.055 31.6622 49.897C32.7682 50.782 31.9722 55.073 30.2462 56.71L30.2472 56.709Z' fill='%23C72B50 '/><path d='M62.4974 45.207C61.9082 44.2655 61.0202 43.5489 59.9754 43.172C53.5614 41.09 48.2964 46.003 44.6244 50.736C40.8956 55.6996 38.7941 61.6955 38.6084 67.901C38.7854 71.573 39.6704 75.687 43.4304 77.147C49.5794 78.695 54.0924 73.475 57.4084 69.14C57.7624 68.521 58.3814 67.99 58.3814 67.282C58.1164 67.149 57.8944 66.928 57.5814 66.928C56.8957 67.9763 56.1266 68.9675 55.2814 69.892C53.1584 71.971 50.4594 73.608 47.3624 72.9C43.9564 71.352 43.8234 67.37 44.1334 63.92C44.287 62.5942 44.5837 61.2889 45.0184 60.027L47.3184 59.363C52.4054 57.682 58.4184 57.328 61.8284 52.196C62.9784 50.249 63.9074 47.33 62.4924 45.206L62.4974 45.207ZM51.1724 56.532C44.2274 58.788 45.9524 57.859 45.9524 57.859C45.9524 57.859 51.2604 42.021 56.6574 43.879C62.1434 45.737 58.1574 54.279 51.1714 56.531L51.1724 56.532Z' fill='%23C72B50'/><path d='M66.4351 42.774L88.6431 42.641L86.6971 49.896L79.4421 50.029L72.0531 76.307H63.9131L71.0351 49.985H64.3551L66.4351 42.774Z' fill='%23C72B50'/><path d='M95.1012 42.729L78.9102 76.263H87.2711L89.8372 70.733H97.3582V76.219L104.702 76.175V42.641L95.1022 42.729H95.1012ZM92.8452 64.096L97.2691 54.496L97.3132 54.363V64.096H92.8452Z' fill='%23C72B50'/></svg>");
   }
 
   &-content {
@@ -423,12 +423,12 @@ select {
   }
 
   .decrease::before {
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='15' cy='15' r='14.5' stroke='%23344857'/><rect x='11' y='15' width='8' height='2' fill='%23344857'/></svg>");
+    content: url("data:image/svg+xml;charset=UTF-8, <svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='15' cy='15' r='14.5' stroke='%23ffffff'/><rect x='11' y='15' width='8' height='2' fill='%23ffffff'/></svg>");
   }
 
   .increase::before {
     line-height: 25px;
-    content: url("data:image/svg+xml;charset=UTF-8, <svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='15' cy='15' r='14.5' stroke='%23344857'/><rect x='11' y='15' width='8' height='1' fill='%23344857'/><rect x='15.5' y='11.5' width='8' height='1' transform='rotate(90 15.5 11.5)' fill='%23344857'/></svg>");
+    content: url("data:image/svg+xml;charset=UTF-8, <svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='15' cy='15' r='14.5' stroke='%23ffffff'/><rect x='11' y='15' width='8' height='1' fill='%23ffffff'/><rect x='15.5' y='11.5' width='8' height='1' transform='rotate(90 15.5 11.5)' fill='%23344857'/></svg>");
   }
 }
 
@@ -437,7 +437,7 @@ select {
 }
 
 .en__component--carePackage-content {
-  background: #E5ECEF;
+  background: #E6A6BE;
   color: #344857;
   // width: 100%;
   height: auto;
@@ -555,14 +555,14 @@ select {
 
 .en__component--wrap {
   height: 100%;
-  background-color: #E5ECEF;
+  background-color: #C72B50;
 }
 
 .en__component--customAmount {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #418FDE;
+  background: #C72B50;
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
@@ -668,7 +668,7 @@ select {
 
 .en__component--content {
   padding: 30px 20px;
-  color: #344857;
+  color: #fff;
   box-sizing: border-box;
   text-align: center;
   font-size: 22px;
@@ -705,7 +705,7 @@ select {
 .en__component--donationAmount {
   position: absolute;
   margin: 6px 0 0 6px;
-  background: #F5BA37;
+  background: #E6A6BE;
   color: #ffffff;
   padding: 24px 4px;
   font-size: 24px;
@@ -776,7 +776,7 @@ select {
   display: flex;
   margin: 50px auto;
   button {
-    background: #418FDE;
+    background: #C72B50;
     padding: 20px 40px;
     border-radius: 4px;
     color: #ffffff;
