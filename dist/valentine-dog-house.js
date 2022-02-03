@@ -513,7 +513,7 @@ var main = __webpack_require__(0);
 var options = {
   title: "<strong>Select gift(s)</strong> <em>(select as many as you would like):</em>",
   heroTitle: "<h1>Help a Neglected Dog Survive the Winter</h1>",
-  heroCopy: "\n    <p>For dogs kept outside, the bone-chilling temperatures and bitter winds this winter could be deadly. <span style=\"font-weight: bold\">They need your help right now.</span></p>\n    <p>Will you change a dog's life by sending an emergency care package today? PETA provides lonely, neglected dogs with shelter,\n    lightweight tie-outs to replace heavy chains, and even water buckets that we secure to prevent tipping. Your support will go\n    straight to helping dogs suffering in the harsh elements without adequate care and shelter.</p>\n    <input type=\"button\" value=\"Send your care package!\" onClick=\"document.getElementById('en__component--heading').scrollIntoView();\">\n    ",
+  heroCopy: "\n    <p>Strong winds, snow, and freezing temperatures can be deadly for a dog forced to live outside instead of being in the safety of a loving home.</p>\n    <p>Right now, you can send love to a \u201Cbackyard dog\u201D with a Valentine\u2019s Day care package. Help PETA\u2019s team provide insulated doghouses, lightweight tie-outs to replace heavy chains, much-need care, and more.</p>\n    <p>Change a dog\u2019s life today!</p>\n    <input type=\"button\" value=\"Send your care package!\" onClick=\"document.getElementById('en__component--heading').scrollIntoView();\">\n    ",
   responsiveTitle: "<strong>Select Gift(s):</strong>",
   customAmount: true,
   customAmountImage: "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/2021-Shop-Choose-Amount-WDH1.jpg?v=1636121242000",

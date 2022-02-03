@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    "winter-dog-house": "./src/index.js"
+    "valentine-dog-house": "./src/index.js"
   },
   optimization: {
     minimize: false

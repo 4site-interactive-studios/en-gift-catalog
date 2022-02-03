@@ -2,10 +2,9 @@ let options = {
   title: "<strong>Select gift(s)</strong> <em>(select as many as you would like):</em>",
   heroTitle: "<h1>Help a Neglected Dog Survive the Winter</h1>",
   heroCopy: `
-    <p>For dogs kept outside, the bone-chilling temperatures and bitter winds this winter could be deadly. <span style="font-weight: bold">They need your help right now.</span></p>
-    <p>Will you change a dog's life by sending an emergency care package today? PETA provides lonely, neglected dogs with shelter,
-    lightweight tie-outs to replace heavy chains, and even water buckets that we secure to prevent tipping. Your support will go
-    straight to helping dogs suffering in the harsh elements without adequate care and shelter.</p>
+    <p>Strong winds, snow, and freezing temperatures can be deadly for a dog forced to live outside instead of being in the safety of a loving home.</p>
+    <p>Right now, you can send love to a “backyard dog” with a Valentine’s Day care package. Help PETA’s team provide insulated doghouses, lightweight tie-outs to replace heavy chains, much-need care, and more.</p>
+    <p>Change a dog’s life today!</p>
     <input type="button" value="Send your care package!" onClick="document.getElementById('en__component--heading').scrollIntoView();">
     `,
   responsiveTitle: "<strong>Select Gift(s):</strong>",
