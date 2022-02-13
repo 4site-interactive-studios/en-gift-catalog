@@ -10,7 +10,7 @@ const stylesHandler = "style-loader";
 const config = {
   entry: "./src/index.js",
   output: {
-    filename: "en-gift-catalog.js",
+    filename: "en-gift-catalog-germany.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
