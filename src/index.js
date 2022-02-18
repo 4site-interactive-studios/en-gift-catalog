@@ -118,6 +118,29 @@ window.addEventListener("DOMContentLoaded", (event) => {
       carePackageBtn();
       moveError();
       listenMonthlyCheckbox();
+      updateInput(
+        +document.querySelector(".en__component--customDonationAmount input")
+          .value
+      );
+      setTabIndex([
+        ".en__component--customDonationAmount input",
+        "#en__field_pseudo_currencyConverter",
+        "#en__field_supporter_firstName",
+        "#en__field_supporter_lastName",
+        "#en__field_supporter_address1",
+        "#en__field_supporter_address2",
+        "#en__field_supporter_country",
+        "#en__field_supporter_postcode",
+        "#en__field_supporter_city",
+        "#en__field_supporter_region",
+        "#en__field_supporter_emailAddress",
+        "#en__field_transaction_paymenttype",
+        "#en__field_transaction_ccnumber",
+        "#en__field_transaction_ccvv",
+        "#en__field_transaction_ccexpire",
+        "select[name='transaction.ccexpire']",
+        ".en__submit button",
+      ]);
 
       document.querySelector(
         ".en__field--donationAmt.en__field--radio .en__field__element .en__field__item:nth-last-child(2) input"
@@ -176,7 +199,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             <h1>Additional gift <br> of your choice:</h1>
             <div class='en__component--customDonationAmount-wrap'>
               <div class='en__component--customDonationAmount'>
-                <input type="number" step="any" placeholder="Other Amount" min="0" value="${
+                <input type="text" placeholder="Other Amount" inputmode="decimal" data-lpignore="true" autocomplete="off" value="${
                   localStorage.getItem("customDonation")
                     ? localStorage.getItem("customDonation")
                     : 0
@@ -260,12 +283,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
       updateInput(customDonationAmount);
 
       customAmount.addEventListener("input", function (e) {
-        if (e.target.value === "") {
+        if (e.target.value === "" || parseFloat(e.target.value) < 0) {
+          e.target.value = 0;
           customDonationAmount = 0;
           updateInput(0);
         } else {
           customDonationAmount = +e.target.value;
           updateInput(customDonationAmount);
+        }
+      });
+      customAmount.addEventListener("focus", function (e) {
+        if (e.target.value === "0") {
+          e.target.value = "";
         }
       });
     }
@@ -313,19 +342,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
         updateInput(customDonationAmount);
       });
     }
+  }
+  function updateInput(customAmount) {
+    const carePackagesTotal = document.querySelectorAll(".totalAmount");
 
-    function updateInput(customAmount) {
-      const carePackagesTotal = document.querySelectorAll(".totalAmount");
+    const result = values.reduce((acc, current) => {
+      return acc + current.value * current.amount;
+    }, 0);
 
-      const result = values.reduce((acc, current) => {
-        return acc + current.value * current.amount;
-      }, 0);
-
-      carePackagesTotal.forEach((total) => {
-        total.innerHTML = customAmount + result;
-      });
-      inputDonation.value = customAmount + result;
-    }
+    carePackagesTotal.forEach((total) => {
+      total.innerHTML = customAmount + result;
+    });
+    inputDonation.value = customAmount + result;
   }
 
   function moveBasicFields() {
@@ -475,6 +503,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
         monthly.style.display = "inline-block";
       } else {
         monthly.style.display = "none";
+      }
+    });
+  }
+  function setTabIndex(elements) {
+    let order = 1;
+    elements.forEach((element) => {
+      const el = document.querySelector(element);
+      if (el) {
+        el.setAttribute("tabindex", order);
+        order++;
       }
     });
   }
