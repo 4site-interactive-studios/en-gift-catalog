@@ -42,6 +42,10 @@ export class enGiftCatalog {
       this.carePackageBtn();
       this.moveError();
       this.listenMonthlyCheckbox();
+      this.updateInput(
+        +document.querySelector(".en__component--customDonationAmount input")
+          .value
+      );
 
       if (localStorage.getItem("repeatGift") === "true") {
         document.querySelector(
@@ -103,12 +107,18 @@ export class enGiftCatalog {
     const thisClass = this;
 
     customAmount.addEventListener("input", function (e) {
-      if (e.target.value === "") {
+      if (e.target.value === "" || parseFloat(e.target.value) < 0) {
+        e.target.value = 0;
         thisClass.customDonationAmount = 0;
         thisClass.updateInput(0);
       } else {
         thisClass.customDonationAmount = +e.target.value;
         thisClass.updateInput(thisClass.customDonationAmount);
+      }
+    });
+    customAmount.addEventListener("focus", function (e) {
+      if (e.target.value === "0") {
+        e.target.value = "";
       }
     });
   }
@@ -268,7 +278,7 @@ export class enGiftCatalog {
             <h1>Zusätzlicher Hilfsbetrag:</h1>
             <div class='en__component--customDonationAmount-wrap'>
               <div class='en__component--customDonationAmount'>
-                <input type="text" step="any" placeholder="Wunschbetrag" value="${
+                <input type="text" placeholder="Wunschbetrag" inputmode="decimal" data-lpignore="true" autocomplete="off" value="${
                   localStorage.getItem("customDonation")
                     ? localStorage.getItem("customDonation")
                     : 0
