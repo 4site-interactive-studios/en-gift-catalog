@@ -112,7 +112,8 @@ export class enGiftCatalog {
         thisClass.customDonationAmount = 0;
         thisClass.updateInput(0);
       } else {
-        thisClass.customDonationAmount = +e.target.value;
+        const value = parseFloat(e.target.value.replace(",", "."));
+        thisClass.customDonationAmount = value;
         thisClass.updateInput(thisClass.customDonationAmount);
       }
     });
@@ -120,6 +121,10 @@ export class enGiftCatalog {
       if (e.target.value === "0") {
         e.target.value = "";
       }
+    });
+    customAmount.addEventListener("blur", function (e) {
+      // Replace commas with periods
+      e.target.value = e.target.value.replace(",", ".");
     });
   }
   createSelectAmount(slider, index) {
@@ -283,7 +288,7 @@ export class enGiftCatalog {
                     ? localStorage.getItem("customDonation")
                     : 0
                 }" />
-                <div class="en__component--usd">EUR</div>
+                <div class="en__component--usd">EURO</div>
               </div>
             </div>
           </div>
@@ -366,9 +371,7 @@ export class enGiftCatalog {
                 <label
                   for="en__field_transaction_recurrpay"
                   class="en__field__label en__field__label--item"
-                  >Give a monthly gift to provide a dog in need with a monthly
-                  care package and PETA will receive an additional $75 from a
-                  generous donor!
+                  >Regelmäßig unterstützen: Mit einem monatlichen Beitrag helfen Sie uns, in akuten Situationen so viele Tiere wie möglich zu versorgen, und gleichzeitig langfristige Pläne zu erarbeiten, um nachhaltige Veränderungen zu bewirken.
                   <div class="checkmark"></div
                 ></label>
               </div>
@@ -438,7 +441,7 @@ export class enGiftCatalog {
         >
           <h1 class="frequency-title single">
             <div class="single-gift-title">Schließen Sie Ihre <span class="totalAmount">0</span> Euro Spende ab</div>
-            <div class="monthly-gift-title">Schließen Sie Ihren regelmäßigen Beitrag in Höhe von <span class="totalAmount">0</span> Euro ab</div>
+            <div class="monthly-gift-title">Schließen Sie Ihren monatlichen Beitrag in Höhe von <span class="totalAmount">0</span> Euro ab</div>
           </h1>
         </div>
       </div>
