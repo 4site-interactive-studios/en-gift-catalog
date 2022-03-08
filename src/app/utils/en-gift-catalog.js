@@ -122,9 +122,16 @@ export class enGiftCatalog {
         e.target.value = "";
       }
     });
-    customAmount.addEventListener("blur", function (e) {
-      // Replace commas with periods
-      e.target.value = e.target.value.replace(",", ".");
+    customAmount.addEventListener("keyup", function (e) {
+      const errorWrapper = document.querySelector(
+        ".en__component--customDonationAmount-error"
+      );
+      // Check if the value has commas
+      if (e.target.value.indexOf(",") > -1) {
+        errorWrapper.classList.add("show");
+      } else {
+        errorWrapper.classList.remove("show");
+      }
     });
   }
   createSelectAmount(slider, index) {
@@ -291,6 +298,7 @@ export class enGiftCatalog {
                 <div class="en__component--usd">EURO</div>
               </div>
             </div>
+            <div class="en__component--customDonationAmount-error">Bitte geben Sie den gewünschten Betrag mit einem Punkt statt einem Komma ein</div>
           </div>
           <img src="${options.customAmountImage}" border="0" />
         </div>

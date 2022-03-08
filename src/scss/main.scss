@@ -622,6 +622,32 @@
       margin: 0 auto;
       box-sizing: border-box;
     }
+    .en__component--customDonationAmount-error {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -110px;
+      z-index: 100;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+      width: 80%;
+      padding: 3%;
+      height: auto;
+      margin: 0 auto;
+      box-sizing: border-box;
+      color: #c92533;
+      background-color: #fff;
+      font-size: 0.7em;
+      line-height: 1.3;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      &.show {
+        opacity: 1;
+      }
+    }
 
     .en__component--customDonationAmount {
       display: flex;
