@@ -442,8 +442,8 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ea9412; //#344857;
-    background: #ea9412;
+    border: 1px solid #db7d03; //#344857;
+    background: #db7d03;
     color: #ffffff;
     border-radius: 4px;
     padding: 32px;
@@ -545,7 +545,7 @@ select {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #ea9412;
+  background: #db7d03;
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
@@ -673,7 +673,7 @@ select {
 }
 
 .en__component--donationAmount.urgent {
-  background: #e93f23;
+  background: #df3116;
 
   &::after {
     display: flex;
@@ -688,7 +688,7 @@ select {
 .en__component--donationAmount {
   position: absolute;
   margin: 6px 0 0 6px;
-  background: #ea9412;
+  background: #db7d03;
   color: #ffffff;
   padding: 24px 4px;
   font-size: 24px;
@@ -759,7 +759,7 @@ select {
   display: flex;
   margin: 50px auto;
   button {
-    background: #e93f23;
+    background: #df3116;
     padding: 20px 40px;
     border-radius: 4px;
     color: #ffffff;
@@ -1016,7 +1016,7 @@ select {
 }
 
 .en__errorHeader {
-  background: #e93f23;
+  background: #df3116;
   color: #ffffff !important;
   padding: 16px !important;
   margin: 0 10px 10px 10px;
